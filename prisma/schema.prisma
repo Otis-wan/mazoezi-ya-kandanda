@@ -1,103 +1,227 @@
 generator client {
-  provider = "prisma-client-js"
+  provider            = "prisma-client"
+  output              = "../src/generated/prisma"
+  moduleFormat        = "esm"
+  importFileExtension = "js"
 }
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+}
+
+enum Position {
+  GK
+  DF
+  MF
+  FW
+}
+
+enum DrillPosition {
+  GK
+  DF
+  MF
+  FW
+  ALL
+}
+
+enum AgeBand {
+  AGE_13_14
+  AGE_15_16
+  AGE_17_19
+}
+
+enum DrillFormat {
+  INDIVIDUAL
+  PAIRS
+  SMALL_GROUP
+  GROUP
+}
+
+enum Intensity {
+  LOW
+  MEDIUM
+  HIGH
+}
+
+enum DrillCategory {
+  BALL_MASTERY
+  PASSING
+  DRIBBLING
+  SHOOTING
+  HEADING
+  DEFENDING
+  TACTICAL
+  GOALKEEPING
+  SET_PIECES
+  PHYSICAL
+  PSYCHOLOGICAL
+}
+
+enum StaffRole {
+  COACH
+  TEAM_MANAGER
+}
+
+enum Recurrence {
+  ONCE
+  DAILY
+  WEEKLY
+}
+
+enum AssignmentStatus {
+  PENDING
+  IN_PROGRESS
+  SUBMITTED
+  REVIEWED
+  CANCELLED
+}
+
+enum ScoreSource {
+  COACH
+  SELF
+}
+model Team {
+  id         String    @id @default(uuid())
+  externalId String    @unique
+  name       String
+  ageBand    AgeBand
+  players    Player[]
+  staff      TeamStaff[]
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+}
+
+model TeamStaff {
+  teamId          String
+  staffExternalId String
+  role            StaffRole
+  team            Team      @relation(fields: [teamId], references: [id], onDelete: Cascade)
+
+  @@id([teamId, staffExternalId])
+  @@index([staffExternalId])
 }
 
 model Player {
-  id         String   @id @default(uuid())
-  externalId String   @unique          // main system's ID — source of truth
-  firstName  String
-  lastName   String
-  birthYear  Int
-  position   String?                   // GK | DF | MF | FW
-  teamId     String?
-  team       Team?    @relation(fields: [teamId], references: [id])
-  isActive   Boolean  @default(true)
-  assignments Assignment[]
-  updatedAt  DateTime @updatedAt
-}
+  id             String       @id @default(uuid())
+  externalId     String       @unique
+  userExternalId String?      @unique // set when the player gets an account
+  firstName      String
+  lastName       String
+  birthYear      Int
+  position       Position?
+  teamId         String?
+  team           Team?        @relation(fields: [teamId], references: [id], onDelete: SetNull)
+  isActive       Boolean      @default(true)
+  assignments    Assignment[]
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
 
-model Team {
-  id         String   @id @default(uuid())
-  externalId String   @unique
-  name       String
-  ageBand    String                    // "13-14" | "15-16" | "17-19"
-  players    Player[]
+  @@index([teamId])
 }
 
 model Drill {
-  id             String   @id           // e.g. "sh-008" — matches your seed file
+  id             String          @id // e.g. "sh-008"
   name           String
-  category       String                 // shooting, goalkeeping, ...
+  category       DrillCategory
   subcategory    String
-  format         String                 // individual | pairs | small_group | group
-  ageBands       String[]
-  positions      String[]
+  format         DrillFormat
+  ageBands       AgeBand[]
+  positions      DrillPosition[]
   durationMin    Int
-  intensity      String
+  intensity      Intensity
   equipment      String[]
   description    String
   coachingPoints String[]
-  rubric         Json                   // [{criterion, description}]
+  rubric         Json            // [{criterion, description}]
   progression    String?
   videoNote      String?
   safetyNote     String?
+  routines       RoutineDrill[]
+  scores         ScoreEntry[]
+
+  @@index([category])
 }
 
 model Routine {
-  id        String        @id @default(uuid())
-  name      String
-  drills    RoutineDrill[]
-  assignments Assignment[]
+  id                  String         @id @default(uuid())
+  name                String
+  description         String?
+  tags                String[]
+  createdByExternalId String
+  isArchived          Boolean        @default(false)
+  drills              RoutineDrill[]
+  assignments         Assignment[]
+  createdAt           DateTime       @default(now())
+  updatedAt           DateTime       @updatedAt
 }
 
 model RoutineDrill {
+  id        String  @id @default(uuid())
   routineId String
   drillId   String
   order     Int
-  routine   Routine @relation(fields: [routineId], references: [id])
-  drill     Drill   @relation(fields: [drillId], references: [id])
-  @@id([routineId, drillId, order])
+  routine   Routine @relation(fields: [routineId], references: [id], onDelete: Cascade)
+  drill     Drill   @relation(fields: [drillId], references: [id], onDelete: Restrict)
+
+  @@unique([routineId, order])
+  @@index([drillId])
 }
 
 model Assignment {
-  id               String    @id @default(uuid())
-  routineId        String
-  routine          Routine   @relation(fields: [routineId], references: [id])
-  playerId         String
-  player           Player    @relation(fields: [playerId], references: [id])
-  coachExternalId  String
-  status           String    @default("pending")  // pending|in_progress|submitted|reviewed|overdue|cancelled
-  dueAt            DateTime
-  recurrence       String    @default("once")
-  note             String?
-  createdAt        DateTime  @default(now())
-  submission       Submission?
-  review           Review?
+  id              String           @id @default(uuid())
+  routineId       String
+  routine         Routine          @relation(fields: [routineId], references: [id], onDelete: Restrict)
+  playerId        String
+  player          Player           @relation(fields: [playerId], references: [id], onDelete: Restrict)
+  coachExternalId String
+  status          AssignmentStatus @default(PENDING)
+  dueAt           DateTime
+  recurrence      Recurrence       @default(ONCE)
+  note            String?
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+  submission      Submission?
+  review          Review?
+  scores          ScoreEntry[]
+
+  @@index([playerId, status])
+  @@index([status, dueAt])
+  @@index([routineId])
+  @@index([coachExternalId])
 }
 
 model Submission {
-  id              String      @id @default(uuid())
-  assignmentId    String      @unique
-  assignment      Assignment  @relation(fields: [assignmentId], references: [id])
-  submittedAt     DateTime    @default(now())
-  selfScore       Int?
+  id              String     @id @default(uuid())
+  assignmentId    String     @unique
+  assignment      Assignment @relation(fields: [assignmentId], references: [id], onDelete: Cascade)
+  submittedAt     DateTime   @default(now())
   selfFeedback    String?
-  videoPlaybackId String?     // Mux/Stream playback ID only — never a file
+  videoPlaybackId String?    // playback ID only, never a file
 }
 
 model Review {
-  id                String      @id @default(uuid())
-  assignmentId      String      @unique
-  assignment        Assignment  @relation(fields: [assignmentId], references: [id])
-  coachExternalId   String
-  reviewedAt        DateTime    @default(now())
-  overallScore      Int
-  criterionScores   Json        // [{criterion, score}]
-  feedback          String?
-  videoPlaybackId   String?
+  id                 String     @id @default(uuid())
+  assignmentId       String     @unique
+  assignment         Assignment @relation(fields: [assignmentId], references: [id], onDelete: Cascade)
+  reviewerExternalId String
+  reviewedAt         DateTime   @default(now())
+  feedback           String?
+  videoPlaybackId    String?
+}
+
+model ScoreEntry {
+  id               String      @id @default(uuid())
+  assignmentId     String
+  assignment       Assignment  @relation(fields: [assignmentId], references: [id], onDelete: Cascade)
+  drillId          String
+  drill            Drill       @relation(fields: [drillId], references: [id], onDelete: Restrict)
+  criterion        String
+  score            Int         // 1 to 5, enforced by a check in the migration
+  source           ScoreSource
+  authorExternalId String
+  createdAt        DateTime    @default(now())
+  updatedAt        DateTime    @updatedAt
+
+  @@unique([assignmentId, drillId, criterion, source])
+  @@index([drillId])
 }
