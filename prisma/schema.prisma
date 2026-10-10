@@ -1,0 +1,103 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Player {
+  id         String   @id @default(uuid())
+  externalId String   @unique          // main system's ID — source of truth
+  firstName  String
+  lastName   String
+  birthYear  Int
+  position   String?                   // GK | DF | MF | FW
+  teamId     String?
+  team       Team?    @relation(fields: [teamId], references: [id])
+  isActive   Boolean  @default(true)
+  assignments Assignment[]
+  updatedAt  DateTime @updatedAt
+}
+
+model Team {
+  id         String   @id @default(uuid())
+  externalId String   @unique
+  name       String
+  ageBand    String                    // "13-14" | "15-16" | "17-19"
+  players    Player[]
+}
+
+model Drill {
+  id             String   @id           // e.g. "sh-008" — matches your seed file
+  name           String
+  category       String                 // shooting, goalkeeping, ...
+  subcategory    String
+  format         String                 // individual | pairs | small_group | group
+  ageBands       String[]
+  positions      String[]
+  durationMin    Int
+  intensity      String
+  equipment      String[]
+  description    String
+  coachingPoints String[]
+  rubric         Json                   // [{criterion, description}]
+  progression    String?
+  videoNote      String?
+  safetyNote     String?
+}
+
+model Routine {
+  id        String        @id @default(uuid())
+  name      String
+  drills    RoutineDrill[]
+  assignments Assignment[]
+}
+
+model RoutineDrill {
+  routineId String
+  drillId   String
+  order     Int
+  routine   Routine @relation(fields: [routineId], references: [id])
+  drill     Drill   @relation(fields: [drillId], references: [id])
+  @@id([routineId, drillId, order])
+}
+
+model Assignment {
+  id               String    @id @default(uuid())
+  routineId        String
+  routine          Routine   @relation(fields: [routineId], references: [id])
+  playerId         String
+  player           Player    @relation(fields: [playerId], references: [id])
+  coachExternalId  String
+  status           String    @default("pending")  // pending|in_progress|submitted|reviewed|overdue|cancelled
+  dueAt            DateTime
+  recurrence       String    @default("once")
+  note             String?
+  createdAt        DateTime  @default(now())
+  submission       Submission?
+  review           Review?
+}
+
+model Submission {
+  id              String      @id @default(uuid())
+  assignmentId    String      @unique
+  assignment      Assignment  @relation(fields: [assignmentId], references: [id])
+  submittedAt     DateTime    @default(now())
+  selfScore       Int?
+  selfFeedback    String?
+  videoPlaybackId String?     // Mux/Stream playback ID only — never a file
+}
+
+model Review {
+  id                String      @id @default(uuid())
+  assignmentId      String      @unique
+  assignment        Assignment  @relation(fields: [assignmentId], references: [id])
+  coachExternalId   String
+  reviewedAt        DateTime    @default(now())
+  overallScore      Int
+  criterionScores   Json        // [{criterion, score}]
+  feedback          String?
+  videoPlaybackId   String?
+}
