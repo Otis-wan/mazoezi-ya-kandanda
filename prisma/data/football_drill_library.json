@@ -1,0 +1,4177 @@
+{
+  "metadata": {
+    "name": "Youth Football Development Drill Library",
+    "version": "1.0",
+    "target_ages": "13-19",
+    "age_bands": {
+      "13-14": {
+        "label": "Foundation",
+        "emphasis": "~70% technical: ball mastery, first touch, 1v1, SSGs; introduce heading & GK streams"
+      },
+      "15-16": {
+        "label": "Development",
+        "emphasis": "Technical + tactical principles, position-specific work, supervised strength intro"
+      },
+      "17-19": {
+        "label": "Performance",
+        "emphasis": "Position specialisation, game model, set pieces, physical loading, senior-football mirror"
+      }
+    },
+    "categories": [
+      "ball_mastery",
+      "passing",
+      "dribbling",
+      "shooting",
+      "heading",
+      "defending",
+      "tactical",
+      "goalkeeping",
+      "set_pieces",
+      "physical",
+      "psychological"
+    ],
+    "formats": [
+      "individual",
+      "pairs",
+      "small_group",
+      "group"
+    ],
+    "positions": [
+      "GK",
+      "DF",
+      "MF",
+      "FW",
+      "ALL"
+    ],
+    "rubric_scale": {
+      "min": 1,
+      "max": 5,
+      "note": "1=emerging, 3=consistent, 5=excellent; scored per criterion"
+    }
+  },
+  "drills": [
+    {
+      "id": "bm-001",
+      "name": "Ball Mastery: Sole Rolls & Inside Taps",
+      "category": "ball_mastery",
+      "subcategory": "ball_mastery",
+      "format": "individual",
+      "age_bands": [
+        "13-14",
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 15,
+      "intensity": "medium",
+      "equipment": [
+        "ball",
+        "cones"
+      ],
+      "description": "Stationary and moving touches using sole rolls, inside-outside touches and toe taps. Foundation routine for close control, performed in a small grid per player.",
+      "coaching_points": [
+        "Keep head up between touches",
+        "Light, frequent touches - ball stays within one step",
+        "Work both feet equally"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Correct body shape and execution of the core technique"
+        },
+        {
+          "criterion": "consistency",
+          "description": "Repeats the technique accurately across reps, both feet where required"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Works at match-like tempo and focus throughout"
+        }
+      ],
+      "progression": "Add a turn every 10 touches, then perform while jogging through a gate course.",
+      "video_note": "Front and side view of a player performing the full routine at slow then full tempo."
+    },
+    {
+      "id": "bm-002",
+      "name": "Ball Mastery: V-Pulls & L-Turns",
+      "category": "ball_mastery",
+      "subcategory": "ball_mastery",
+      "format": "individual",
+      "age_bands": [
+        "13-14",
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 15,
+      "intensity": "medium",
+      "equipment": [
+        "ball",
+        "cones"
+      ],
+      "description": "Turning repertoire using V-pulls and L-turns to change direction away from imaginary pressure.",
+      "coaching_points": [
+        "Push the ball forward before dragging back",
+        "Accelerate out of the turn",
+        "Turn both directions equally"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Correct body shape and execution of the core technique"
+        },
+        {
+          "criterion": "consistency",
+          "description": "Repeats the technique accurately across reps, both feet where required"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Works at match-like tempo and focus throughout"
+        }
+      ],
+      "progression": "Perform against a passive defender who shows a side; execute the turn away from pressure.",
+      "video_note": "Close-up of footwork plus full-body view showing the acceleration after each turn."
+    },
+    {
+      "id": "bm-003",
+      "name": "Step-overs & Scissors (Static to Moving)",
+      "category": "ball_mastery",
+      "subcategory": "ball_mastery",
+      "format": "individual",
+      "age_bands": [
+        "13-14",
+        "15-16"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 15,
+      "intensity": "medium",
+      "equipment": [
+        "ball",
+        "cones"
+      ],
+      "description": "Step-over and scissors technique broken down statically, then performed while dribbling between cones.",
+      "coaching_points": [
+        "Sell the fake with shoulder and hip drop",
+        "Touch out with the opposite foot after the fake",
+        "Build speed gradually - technique first"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Correct body shape and execution of the core technique"
+        },
+        {
+          "criterion": "consistency",
+          "description": "Repeats the technique accurately across reps, both feet where required"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Works at match-like tempo and focus throughout"
+        }
+      ],
+      "progression": "Execute at a mannequin, then against a passive defender in a 1v1 gate game.",
+      "video_note": "Slow-motion breakdown of the footwork, then game-speed application."
+    },
+    {
+      "id": "bm-004",
+      "name": "Cruyff Turn Mastery",
+      "category": "ball_mastery",
+      "subcategory": "ball_mastery",
+      "format": "individual",
+      "age_bands": [
+        "13-14",
+        "15-16"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 10,
+      "intensity": "medium",
+      "equipment": [
+        "ball",
+        "cones"
+      ],
+      "description": "Repetition of the Cruyff turn on both feet, first static then on the move, finishing with a pass or shot after the turn.",
+      "coaching_points": [
+        "Plant foot beside the ball",
+        "Drag with the inside of the foot behind the standing leg",
+        "Head up immediately after the turn"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Correct body shape and execution of the core technique"
+        },
+        {
+          "criterion": "consistency",
+          "description": "Repeats the technique accurately across reps, both feet where required"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Works at match-like tempo and focus throughout"
+        }
+      ],
+      "progression": "Use the turn to beat a defender and finish on goal.",
+      "video_note": "Front and rear angles at slow motion; emphasise the disguised shape before the turn."
+    },
+    {
+      "id": "bm-005",
+      "name": "Juggling Foundations",
+      "category": "ball_mastery",
+      "subcategory": "aerial_control",
+      "format": "individual",
+      "age_bands": [
+        "13-14"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 10,
+      "intensity": "low",
+      "equipment": [
+        "ball"
+      ],
+      "description": "Progressive juggling: bounce-juggle, two-touch per foot, then continuous keep-ups with feet only.",
+      "coaching_points": [
+        "Relaxed ankle, toe slightly up",
+        "Keep the ball below knee height to start",
+        "Set personal records and log them"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Correct body shape and execution of the core technique"
+        },
+        {
+          "criterion": "consistency",
+          "description": "Repeats the technique accurately across reps, both feet where required"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Works at match-like tempo and focus throughout"
+        }
+      ],
+      "progression": "Move to alternating feet, then feet-thigh-head sequences.",
+      "video_note": "Demonstration of the full progression ladder with target numbers per level."
+    },
+    {
+      "id": "bm-006",
+      "name": "Juggling Advanced: Alternating & Weak Foot",
+      "category": "ball_mastery",
+      "subcategory": "aerial_control",
+      "format": "individual",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 10,
+      "intensity": "low",
+      "equipment": [
+        "ball"
+      ],
+      "description": "Advanced juggling patterns: strict left-right alternation, weak-foot-only blocks, feet-thigh-head circuits, and low-keep-up control.",
+      "coaching_points": [
+        "Hips square and balanced",
+        "Every touch controlled, not reactive",
+        "Weak foot sets are non-negotiable"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Correct body shape and execution of the core technique"
+        },
+        {
+          "criterion": "consistency",
+          "description": "Repeats the technique accurately across reps, both feet where required"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Works at match-like tempo and focus throughout"
+        }
+      ],
+      "progression": "Add movement (walk a line while juggling) or partner juggling with limited touches.",
+      "video_note": "Examples of each pattern with target rep counts per age band."
+    },
+    {
+      "id": "bm-007",
+      "name": "Wall-Pass First Touch",
+      "category": "ball_mastery",
+      "subcategory": "first_touch",
+      "format": "individual",
+      "age_bands": [
+        "13-14",
+        "15-16"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 15,
+      "intensity": "medium",
+      "equipment": [
+        "ball",
+        "wall or rebounder",
+        "cones"
+      ],
+      "description": "Pass against a wall and control the rebound: inside-foot cushion, outside-of-foot across body, and directed first touch into gates left and right.",
+      "coaching_points": [
+        "Open body shape before the ball arrives",
+        "Cushion - don't stop dead",
+        "Touch must take you toward your next action"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Correct body shape and execution of the core technique"
+        },
+        {
+          "criterion": "consistency",
+          "description": "Repeats the technique accurately across reps, both feet where required"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Works at match-like tempo and focus throughout"
+        }
+      ],
+      "progression": "Randomise gates with coloured cones or a partner call; react and adapt the touch.",
+      "video_note": "Overhead or 45-degree view showing touch direction into each gate."
+    },
+    {
+      "id": "bm-008",
+      "name": "First Touch Out of the Air",
+      "category": "ball_mastery",
+      "subcategory": "first_touch",
+      "format": "individual",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 15,
+      "intensity": "medium",
+      "equipment": [
+        "ball"
+      ],
+      "description": "Self-serve or partner-serve: control balls from height using foot, thigh, chest, and combinations (thigh-chest-feet), finishing with a pass to a target.",
+      "coaching_points": [
+        "Watch the ball onto the surface",
+        "Withdraw the surface on contact to kill the pace",
+        "Second touch plays forward"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Correct body shape and execution of the core technique"
+        },
+        {
+          "criterion": "consistency",
+          "description": "Repeats the technique accurately across reps, both feet where required"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Works at match-like tempo and focus throughout"
+        }
+      ],
+      "progression": "Add a passive presser so the first touch must beat pressure.",
+      "video_note": "Slow-motion of each surface controlling the ball; show bad vs. good cushion."
+    },
+    {
+      "id": "bm-009",
+      "name": "Receiving on the Half-Turn",
+      "category": "ball_mastery",
+      "subcategory": "first_touch",
+      "format": "pairs",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "MF",
+        "FW"
+      ],
+      "duration_min": 15,
+      "intensity": "medium",
+      "equipment": [
+        "balls",
+        "cones",
+        "mannequins or passive defender"
+      ],
+      "description": "Midfielder receives from a server with a passive defender behind; scans, receives on the back foot on the half-turn, and plays forward.",
+      "coaching_points": [
+        "Check shoulder before the pass travels",
+        "Side-on body shape - see both goals",
+        "Receive on the back foot to face forward"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Clean execution of pass, touch, or finish"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Chooses the right option quickly under pressure"
+        },
+        {
+          "criterion": "execution",
+          "description": "End product: accuracy of final action (pass, cross, shot)"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Tempo and movement quality match game speed"
+        }
+      ],
+      "progression": "Make the defender live; receiver decides turn or set based on pressure.",
+      "video_note": "Midfield camera angle showing the scan, shape, and first touch in sequence."
+    },
+    {
+      "id": "bm-010",
+      "name": "Rondo 4v2 / 5v2 Foundations",
+      "category": "ball_mastery",
+      "subcategory": "possession",
+      "format": "small_group",
+      "age_bands": [
+        "13-14",
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 15,
+      "intensity": "high",
+      "equipment": [
+        "balls",
+        "cones",
+        "bibs"
+      ],
+      "description": "Classic possession rondo in a small grid. Two-touch limit, defenders swap after a set number of passes or an interception.",
+      "coaching_points": [
+        "Create passing lines - constant angles",
+        "Play the way you face",
+        "Defenders press together, split passes"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Clean execution of pass, touch, or finish"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Chooses the right option quickly under pressure"
+        },
+        {
+          "criterion": "execution",
+          "description": "End product: accuracy of final action (pass, cross, shot)"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Tempo and movement quality match game speed"
+        }
+      ],
+      "progression": "Reduce to one-touch, shrink the grid, or add a transition element (break out to a target).",
+      "video_note": "High angle showing spacing, body shape, and one/two-touch rhythm."
+    },
+    {
+      "id": "bm-011",
+      "name": "Rondo with Transition (Win & Switch)",
+      "category": "ball_mastery",
+      "subcategory": "possession",
+      "format": "small_group",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 20,
+      "intensity": "high",
+      "equipment": [
+        "balls",
+        "cones",
+        "bibs"
+      ],
+      "description": "Two connected grids: on winning the ball, defenders play it to the far grid and sprint to support - trains transition in both directions.",
+      "coaching_points": [
+        "First thought after winning: forward",
+        "Losing team reacts instantly to counter-press",
+        "Speed of the switch wins the transition"
+      ],
+      "rubric": [
+        {
+          "criterion": "positioning",
+          "description": "Occupies correct zones relative to ball, teammates, opponents"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Applies the game-model principle being trained"
+        },
+        {
+          "criterion": "communication",
+          "description": "Organises and informs teammates verbally and with gestures"
+        },
+        {
+          "criterion": "awareness",
+          "description": "Scans before receiving; knows next action in advance"
+        }
+      ],
+      "progression": "Add a counter-pressing constraint: ball must be recovered within 5 seconds for a bonus point.",
+      "video_note": "Wide angle capturing both grids and the sprint transition between them."
+    },
+    {
+      "id": "pa-001",
+      "name": "Passing Accuracy Gates",
+      "category": "passing",
+      "subcategory": "short_passing",
+      "format": "individual",
+      "age_bands": [
+        "13-14",
+        "15-16"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 15,
+      "intensity": "low",
+      "equipment": [
+        "balls",
+        "cones"
+      ],
+      "description": "Pass through cone gates at 5/10/15m with both feet. Track hits out of 10 per distance per foot for measurable progress.",
+      "coaching_points": [
+        "Non-kicking foot beside the ball pointing at target",
+        "Strike the midline of the ball for flat passes",
+        "Follow through low toward the gate"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Correct body shape and execution of the core technique"
+        },
+        {
+          "criterion": "consistency",
+          "description": "Repeats the technique accurately across reps, both feet where required"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Works at match-like tempo and focus throughout"
+        }
+      ],
+      "progression": "Add a moving ball, a one-touch limit, or a time challenge per gate set.",
+      "video_note": "Side-on slow motion of the strike; score sheet showing hit targets per foot."
+    },
+    {
+      "id": "pa-002",
+      "name": "Short Passing Technique (Inside, Driven, Lofted)",
+      "category": "passing",
+      "subcategory": "short_passing",
+      "format": "pairs",
+      "age_bands": [
+        "13-14",
+        "15-16"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 20,
+      "intensity": "medium",
+      "equipment": [
+        "balls",
+        "cones"
+      ],
+      "description": "Pair passing ladders focusing on three pass types: inside-foot push pass, driven pass with laces-low, and clipped lofted pass.",
+      "coaching_points": [
+        "Check shoulder before receiving",
+        "Weight of pass: firm enough to arrive flat",
+        "Communicate on every ball"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Correct body shape and execution of the core technique"
+        },
+        {
+          "criterion": "consistency",
+          "description": "Repeats the technique accurately across reps, both feet where required"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Works at match-like tempo and focus throughout"
+        }
+      ],
+      "progression": "Introduce a defender between the pair; pass selection must beat the block.",
+      "video_note": "One clip per pass type, slow motion on contact point and ball flight."
+    },
+    {
+      "id": "pa-003",
+      "name": "One-Twos / Wall Passes in Motion",
+      "category": "passing",
+      "subcategory": "combination_play",
+      "format": "pairs",
+      "age_bands": [
+        "13-14",
+        "15-16"
+      ],
+      "positions": [
+        "MF",
+        "FW",
+        "DF"
+      ],
+      "duration_min": 15,
+      "intensity": "medium",
+      "equipment": [
+        "balls",
+        "cones"
+      ],
+      "description": "Pairs move up a channel playing one-twos around mannequins, finishing with a pass into a mini-goal or to a target player.",
+      "coaching_points": [
+        "Pass and move immediately - never admire",
+        "Return pass into the runner's path",
+        "Angle of support from the wall player"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Clean execution of pass, touch, or finish"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Chooses the right option quickly under pressure"
+        },
+        {
+          "criterion": "execution",
+          "description": "End product: accuracy of final action (pass, cross, shot)"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Tempo and movement quality match game speed"
+        }
+      ],
+      "progression": "Add a live defender on the wall player; recognise when to spin instead.",
+      "video_note": "Overhead view of the channel pattern with timing of the return pass highlighted."
+    },
+    {
+      "id": "pa-004",
+      "name": "Third-Man Passing Patterns",
+      "category": "passing",
+      "subcategory": "combination_play",
+      "format": "small_group",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "MF",
+        "FW"
+      ],
+      "duration_min": 20,
+      "intensity": "medium",
+      "equipment": [
+        "balls",
+        "cones",
+        "mannequins"
+      ],
+      "description": "Three-player patterns where the free player is the third man: A-to-B, B sets, A plays C running beyond. Rotating roles.",
+      "coaching_points": [
+        "Set passes must be soft and angled",
+        "Third man times the run off the set",
+        "Scan to find the free player, not the obvious one"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Clean execution of pass, touch, or finish"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Chooses the right option quickly under pressure"
+        },
+        {
+          "criterion": "execution",
+          "description": "End product: accuracy of final action (pass, cross, shot)"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Tempo and movement quality match game speed"
+        }
+      ],
+      "progression": "Add defenders on the set player; extend to four-player patterns through the thirds.",
+      "video_note": "Tactical cam with player labels; freeze-frames on the moment of the set."
+    },
+    {
+      "id": "pa-005",
+      "name": "Combination Play Circuit (Overlap, Underlap, Give-and-Go)",
+      "category": "passing",
+      "subcategory": "combination_play",
+      "format": "group",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "MF",
+        "FW",
+        "DF"
+      ],
+      "duration_min": 25,
+      "intensity": "high",
+      "equipment": [
+        "balls",
+        "cones",
+        "mannequins",
+        "goals"
+      ],
+      "description": "Rotating circuit of three combination stations: give-and-go, overlap cross, underlap through-ball, each finishing on goal.",
+      "coaching_points": [
+        "Trigger movements off the pass, not before it",
+        "Crosser delivers early on the overlap",
+        "Underlap runner attacks the half-space"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Clean execution of pass, touch, or finish"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Chooses the right option quickly under pressure"
+        },
+        {
+          "criterion": "execution",
+          "description": "End product: accuracy of final action (pass, cross, shot)"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Tempo and movement quality match game speed"
+        }
+      ],
+      "progression": "Remove mannequins and play the same combinations against a live back line.",
+      "video_note": "One clip per combination from a wide angle, run twice at game speed."
+    },
+    {
+      "id": "pa-006",
+      "name": "Long-Range Distribution: Driven, Diagonal, Switch",
+      "category": "passing",
+      "subcategory": "long_passing",
+      "format": "small_group",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "DF",
+        "MF",
+        "GK"
+      ],
+      "duration_min": 20,
+      "intensity": "medium",
+      "equipment": [
+        "balls",
+        "cones",
+        "goals or target zones"
+      ],
+      "description": "Hitting 25-40m passes into target zones: driven flat passes, lofted diagonals, and crossfield switches to a receiving player.",
+      "coaching_points": [
+        "Lock the ankle, strike through the bottom half for flight",
+        "Body over the ball for driven passes",
+        "Receiver checks away then comes to the flight"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Clean execution of pass, touch, or finish"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Chooses the right option quickly under pressure"
+        },
+        {
+          "criterion": "execution",
+          "description": "End product: accuracy of final action (pass, cross, shot)"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Tempo and movement quality match game speed"
+        }
+      ],
+      "progression": "Add a presser on the passer and a defender on the receiver; must complete under pressure.",
+      "video_note": "Side view of technique plus wide view of ball flight and zone accuracy."
+    },
+    {
+      "id": "pa-007",
+      "name": "Build-Up Through the Thirds (Pattern Play)",
+      "category": "passing",
+      "subcategory": "build_up",
+      "format": "group",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "DF",
+        "MF",
+        "FW",
+        "GK"
+      ],
+      "duration_min": 30,
+      "intensity": "medium",
+      "equipment": [
+        "balls",
+        "cones",
+        "goals",
+        "bibs"
+      ],
+      "description": "Structured pattern: GK/back line build through midfield into the final third against passive then active pressure, rehearsing your game model's rotations.",
+      "coaching_points": [
+        "Create width and depth immediately",
+        "Midfielders play between lines, side-on",
+        "Recognise the trigger to go direct vs. recycle"
+      ],
+      "rubric": [
+        {
+          "criterion": "positioning",
+          "description": "Occupies correct zones relative to ball, teammates, opponents"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Applies the game-model principle being trained"
+        },
+        {
+          "criterion": "communication",
+          "description": "Organises and informs teammates verbally and with gestures"
+        },
+        {
+          "criterion": "awareness",
+          "description": "Scans before receiving; knows next action in advance"
+        }
+      ],
+      "progression": "Progress to 7v5 then full opposition with counter-attacking consequences on loss.",
+      "video_note": "Full-pitch tactical cam with freeze-frames on each rotation trigger."
+    },
+    {
+      "id": "dr-001",
+      "name": "Cone Slalom: Tight Control at Speed",
+      "category": "dribbling",
+      "subcategory": "close_control",
+      "format": "individual",
+      "age_bands": [
+        "13-14",
+        "15-16"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 15,
+      "intensity": "medium",
+      "equipment": [
+        "balls",
+        "cones"
+      ],
+      "description": "Dribble through a tight cone slalom using both feet and varied surfaces (inside, outside, sole), finishing with a strike on goal.",
+      "coaching_points": [
+        "Small touches - one per stride in tight zones",
+        "Knees bent, body over the ball",
+        "Accelerate out of the last cone"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Correct body shape and execution of the core technique"
+        },
+        {
+          "criterion": "consistency",
+          "description": "Repeats the technique accurately across reps, both feet where required"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Works at match-like tempo and focus throughout"
+        }
+      ],
+      "progression": "Time the runs and set personal bests; shrink cone spacing as times improve.",
+      "video_note": "Overhead view of the slalom line with touch-count visible; slow-motion footwork insert."
+    },
+    {
+      "id": "dr-002",
+      "name": "Speed Dribbling 20-30m with Finish",
+      "category": "dribbling",
+      "subcategory": "speed_dribbling",
+      "format": "individual",
+      "age_bands": [
+        "13-14",
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "MF",
+        "FW",
+        "DF"
+      ],
+      "duration_min": 15,
+      "intensity": "high",
+      "equipment": [
+        "balls",
+        "cones",
+        "goal"
+      ],
+      "description": "Max-speed dribble over 20-30m into a finish. Trains big touches in space, head-up running, and composing for the shot.",
+      "coaching_points": [
+        "Push the ball 2-3m ahead and sprint",
+        "Touch with laces/outside at speed",
+        "Last touch sets the shot - don't over-run it"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Correct body shape and execution of the core technique"
+        },
+        {
+          "criterion": "consistency",
+          "description": "Repeats the technique accurately across reps, both feet where required"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Works at match-like tempo and focus throughout"
+        }
+      ],
+      "progression": "Add a recovering defender chasing from behind or from the side.",
+      "video_note": "Side-tracking shot showing stride and touch rhythm at full speed."
+    },
+    {
+      "id": "dr-003",
+      "name": "1v1 Moves Library (Step-over, Matthews, Elastico, Body Feint)",
+      "category": "dribbling",
+      "subcategory": "1v1_moves",
+      "format": "individual",
+      "age_bands": [
+        "13-14",
+        "15-16"
+      ],
+      "positions": [
+        "MF",
+        "FW"
+      ],
+      "duration_min": 20,
+      "intensity": "medium",
+      "equipment": [
+        "balls",
+        "cones",
+        "mannequins"
+      ],
+      "description": "Technique block learning four core 1v1 moves unopposed, then applied at mannequins with an exit gate and finish.",
+      "coaching_points": [
+        "Sell every move with the body, not just the feet",
+        "Change of pace after the move is the real weapon",
+        "Master 2 moves fully rather than 6 poorly"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Correct body shape and execution of the core technique"
+        },
+        {
+          "criterion": "consistency",
+          "description": "Repeats the technique accurately across reps, both feet where required"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Works at match-like tempo and focus throughout"
+        }
+      ],
+      "progression": "Moves applied against a live defender in gate games.",
+      "video_note": "One slow-motion clip per move from the defender's eye line, then game-speed."
+    },
+    {
+      "id": "dr-004",
+      "name": "Shielding & Protecting the Ball",
+      "category": "dribbling",
+      "subcategory": "ball_protection",
+      "format": "pairs",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 15,
+      "intensity": "medium",
+      "equipment": [
+        "balls",
+        "cones"
+      ],
+      "description": "Back-to-pressure shielding: arm length distance, low centre of gravity, using arms legally, rolling the defender to escape.",
+      "coaching_points": [
+        "Body between ball and opponent at all times",
+        "Feel the defender - roll off the side they lean on",
+        "Wide base, strong core"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Correct body shape and execution of the core technique"
+        },
+        {
+          "criterion": "consistency",
+          "description": "Repeats the technique accurately across reps, both feet where required"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Works at match-like tempo and focus throughout"
+        }
+      ],
+      "progression": "Add a support player; shield then bounce pass out of pressure.",
+      "video_note": "Rear angle showing body positioning and the roll escape."
+    },
+    {
+      "id": "dr-005",
+      "name": "1v1 to Goal from Varied Angles",
+      "category": "dribbling",
+      "subcategory": "1v1_attack",
+      "format": "pairs",
+      "age_bands": [
+        "13-14",
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "MF",
+        "FW"
+      ],
+      "duration_min": 20,
+      "intensity": "high",
+      "equipment": [
+        "balls",
+        "goal",
+        "cones",
+        "GK"
+      ],
+      "description": "Attacker vs defender to goal from three starting pictures: facing the defender, receiving with back to goal, and attacking from the flank.",
+      "coaching_points": [
+        "Attack the defender's front foot",
+        "If they drop - shoot; if they lunge - beat them",
+        "Finish every rep properly"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Clean execution of pass, touch, or finish"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Chooses the right option quickly under pressure"
+        },
+        {
+          "criterion": "execution",
+          "description": "End product: accuracy of final action (pass, cross, shot)"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Tempo and movement quality match game speed"
+        }
+      ],
+      "progression": "Add a time limit (6 seconds) or a recovering second defender.",
+      "video_note": "One clip per starting picture, attacking-camera angle."
+    },
+    {
+      "id": "dr-006",
+      "name": "Tight-Area 1v1/2v2 Grid Games",
+      "category": "dribbling",
+      "subcategory": "1v1_attack",
+      "format": "small_group",
+      "age_bands": [
+        "13-14",
+        "15-16"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 20,
+      "intensity": "high",
+      "equipment": [
+        "balls",
+        "cones",
+        "bibs"
+      ],
+      "description": "Small-grid games (10x10m) where dribbling past a player scores points. Encourages improvisation and close control under real pressure.",
+      "coaching_points": [
+        "Head up - know where the space is",
+        "Use feints to unbalance before committing",
+        "If blocked, protect and recycle"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Clean execution of pass, touch, or finish"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Chooses the right option quickly under pressure"
+        },
+        {
+          "criterion": "execution",
+          "description": "End product: accuracy of final action (pass, cross, shot)"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Tempo and movement quality match game speed"
+        }
+      ],
+      "progression": "Reduce grid size or add a neutral player creating constant overloads.",
+      "video_note": "High-angle clip of a 60-second round showing multiple duel outcomes."
+    },
+    {
+      "id": "dr-007",
+      "name": "Transition Dribbling: Attack Space After Winning the Ball",
+      "category": "dribbling",
+      "subcategory": "transition",
+      "format": "group",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 20,
+      "intensity": "high",
+      "equipment": [
+        "balls",
+        "cones",
+        "goals",
+        "bibs"
+      ],
+      "description": "Possession game where the team winning the ball must dribble or carry it into an end zone within 5 seconds to score.",
+      "coaching_points": [
+        "First touch after regain goes forward into space",
+        "Carry at speed to commit defenders",
+        "Teammates sprint beyond the ball"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Clean execution of pass, touch, or finish"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Chooses the right option quickly under pressure"
+        },
+        {
+          "criterion": "execution",
+          "description": "End product: accuracy of final action (pass, cross, shot)"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Tempo and movement quality match game speed"
+        }
+      ],
+      "progression": "Add a counter-goal option so the carrier must choose: dribble or play forward.",
+      "video_note": "Wide angle with a visible countdown from the regain."
+    },
+    {
+      "id": "sh-001",
+      "name": "Striking Technique: Laces & Side-Foot (Unopposed)",
+      "category": "shooting",
+      "subcategory": "technique",
+      "format": "individual",
+      "age_bands": [
+        "13-14",
+        "15-16"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 20,
+      "intensity": "medium",
+      "equipment": [
+        "balls",
+        "goal",
+        "cones"
+      ],
+      "description": "Blocked repetition of the two core strikes: laces (power) and side-foot (placement) from static and rolling balls into targeted goal zones.",
+      "coaching_points": [
+        "Ankle locked, toe down for laces; open hip for side-foot",
+        "Head steady over the ball at contact",
+        "Land on the shooting foot on power strikes"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Correct body shape and execution of the core technique"
+        },
+        {
+          "criterion": "consistency",
+          "description": "Repeats the technique accurately across reps, both feet where required"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Works at match-like tempo and focus throughout"
+        }
+      ],
+      "progression": "Strike after a dribble or off a rebound; keep the zone targets.",
+      "video_note": "Slow-motion contact frames for both techniques, side and rear view."
+    },
+    {
+      "id": "sh-002",
+      "name": "Volleys & Half-Volleys",
+      "category": "shooting",
+      "subcategory": "technique",
+      "format": "individual",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "MF",
+        "FW"
+      ],
+      "duration_min": 15,
+      "intensity": "medium",
+      "equipment": [
+        "balls",
+        "goal",
+        "server or rebounder"
+      ],
+      "description": "Served balls finished as full volleys and half-volleys. Focus on timing, balance, and keeping the strike down.",
+      "coaching_points": [
+        "Eyes on the ball until contact",
+        "Knee over the ball to keep it down",
+        "Let the ball come - don't lunge"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Correct body shape and execution of the core technique"
+        },
+        {
+          "criterion": "consistency",
+          "description": "Repeats the technique accurately across reps, both feet where required"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Works at match-like tempo and focus throughout"
+        }
+      ],
+      "progression": "Finish from crosses delivered at varied heights and speeds.",
+      "video_note": "Slow-motion of body shape at contact; show the common lean-back error."
+    },
+    {
+      "id": "sh-003",
+      "name": "Finishing from Cutbacks",
+      "category": "shooting",
+      "subcategory": "cross_finishing",
+      "format": "pairs",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "FW",
+        "MF"
+      ],
+      "duration_min": 20,
+      "intensity": "high",
+      "equipment": [
+        "balls",
+        "goal",
+        "cones"
+      ],
+      "description": "Wide player drives to the byline and cuts the ball back; striker makes a curved arriving run and finishes first or second time.",
+      "coaching_points": [
+        "Delay the run - arrive as the ball arrives",
+        "Attack the space at the penalty spot, not the ball line",
+        "Open body to finish back across goal"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Clean execution of pass, touch, or finish"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Chooses the right option quickly under pressure"
+        },
+        {
+          "criterion": "execution",
+          "description": "End product: accuracy of final action (pass, cross, shot)"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Tempo and movement quality match game speed"
+        }
+      ],
+      "progression": "Add a defender tracking the runner and a GK starting centrally.",
+      "video_note": "Wide-angle clip with the runner's arc highlighted; freeze on the arrival moment."
+    },
+    {
+      "id": "sh-004",
+      "name": "Finishing After Combination Play",
+      "category": "shooting",
+      "subcategory": "combination_finishing",
+      "format": "small_group",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "MF",
+        "FW"
+      ],
+      "duration_min": 20,
+      "intensity": "high",
+      "equipment": [
+        "balls",
+        "goal",
+        "mannequins or defenders"
+      ],
+      "description": "Striker links with midfielders (set, spin, one-two) before finishing. Rotating roles, both feet.",
+      "coaching_points": [
+        "Sharp one-touch set with the correct weight",
+        "Explode after the set - separation wins the shot",
+        "Finish across the GK when in doubt"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Clean execution of pass, touch, or finish"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Chooses the right option quickly under pressure"
+        },
+        {
+          "criterion": "execution",
+          "description": "End product: accuracy of final action (pass, cross, shot)"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Tempo and movement quality match game speed"
+        }
+      ],
+      "progression": "Replace mannequins with live defenders and a limited touch count.",
+      "video_note": "Two angles: behind-goal and tactical wide, at game speed."
+    },
+    {
+      "id": "sh-005",
+      "name": "First-Time Finishes from Crosses",
+      "category": "shooting",
+      "subcategory": "cross_finishing",
+      "format": "small_group",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "FW",
+        "MF"
+      ],
+      "duration_min": 25,
+      "intensity": "high",
+      "equipment": [
+        "balls",
+        "goal",
+        "crossing positions"
+      ],
+      "description": "Near-post, far-post and cutback zones attacked with first-time finishes from crossed deliveries. Three rotating stations.",
+      "coaching_points": [
+        "Near post: steal in front of the defender",
+        "Far post: arrive at the back stick, don't wait",
+        "Adjust feet early - no stutter steps"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Clean execution of pass, touch, or finish"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Chooses the right option quickly under pressure"
+        },
+        {
+          "criterion": "execution",
+          "description": "End product: accuracy of final action (pass, cross, shot)"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Tempo and movement quality match game speed"
+        }
+      ],
+      "progression": "Add defenders contesting the cross and a second-ball rule for rebounds.",
+      "video_note": "Overhead diagram of the three zones plus live clips of each finish type."
+    },
+    {
+      "id": "sh-006",
+      "name": "Finishing Under Pressure (1v1 GK, Recovering Defender)",
+      "category": "shooting",
+      "subcategory": "pressure_finishing",
+      "format": "pairs",
+      "age_bands": [
+        "17-19"
+      ],
+      "positions": [
+        "FW"
+      ],
+      "duration_min": 20,
+      "intensity": "high",
+      "equipment": [
+        "balls",
+        "goal",
+        "GK"
+      ],
+      "description": "Striker receives to goal with a defender recovering from the side/behind and a live GK. Decision and composure under chase pressure.",
+      "coaching_points": [
+        "First touch away from the recovery angle",
+        "Decide early: round, slot, or dink",
+        "Stay composed - don't snatch at it"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Clean execution of pass, touch, or finish"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Chooses the right option quickly under pressure"
+        },
+        {
+          "criterion": "execution",
+          "description": "End product: accuracy of final action (pass, cross, shot)"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Tempo and movement quality match game speed"
+        }
+      ],
+      "progression": "Reduce the time window or start the defender closer.",
+      "video_note": "Chase-cam style angle showing the defender closing and the finish decision."
+    },
+    {
+      "id": "sh-007",
+      "name": "Shooting Circuit: Angles & Distances",
+      "category": "shooting",
+      "subcategory": "repetition",
+      "format": "small_group",
+      "age_bands": [
+        "13-14",
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 25,
+      "intensity": "high",
+      "equipment": [
+        "balls",
+        "goals",
+        "cones"
+      ],
+      "description": "Four rotating stations: edge-of-box strike, angled drive, dribble-and-shoot, rebound finish. High-repetition volume block.",
+      "coaching_points": [
+        "Quality over volume - full focus each rep",
+        "Scan the GK position before striking",
+        "Follow in every shot for rebounds"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Clean execution of pass, touch, or finish"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Chooses the right option quickly under pressure"
+        },
+        {
+          "criterion": "execution",
+          "description": "End product: accuracy of final action (pass, cross, shot)"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Tempo and movement quality match game speed"
+        }
+      ],
+      "progression": "Add a scoring competition between stations or a per-player points target.",
+      "video_note": "Quick-cut montage of one rep per station with target zones visible."
+    },
+    {
+      "id": "sh-008",
+      "name": "Weak-Foot Finishing Block",
+      "category": "shooting",
+      "subcategory": "weak_foot",
+      "format": "individual",
+      "age_bands": [
+        "13-14",
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 15,
+      "intensity": "medium",
+      "equipment": [
+        "balls",
+        "goal",
+        "cones"
+      ],
+      "description": "Dedicated weak-foot-only finishing from short range, gradually extending distance. Tracked separately in the player's profile.",
+      "coaching_points": [
+        "Accept slower progress - rebuild the technique properly",
+        "Extra reps, shorter distances, cleaner contact",
+        "Log weak-foot scores separately to see the trend"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Correct body shape and execution of the core technique"
+        },
+        {
+          "criterion": "consistency",
+          "description": "Repeats the technique accurately across reps, both feet where required"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Works at match-like tempo and focus throughout"
+        }
+      ],
+      "progression": "Weak-foot finishing from crosses and cutbacks; then a mixed-feet randomised service.",
+      "video_note": "Side-by-side strong vs. weak foot technique comparison at slow motion."
+    },
+    {
+      "id": "he-001",
+      "name": "Heading Technique Foundations",
+      "category": "heading",
+      "subcategory": "technique",
+      "format": "individual",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 15,
+      "intensity": "low",
+      "equipment": [
+        "balls"
+      ],
+      "description": "Self-toss and partner-serve heading: forehead contact, eyes open, neck firm, heading through the ball. Standing then jumping.",
+      "coaching_points": [
+        "Contact on the forehead hairline",
+        "Attack the ball - don't let it hit you",
+        "Power comes from the neck and back arch, arms for balance"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Correct body shape and execution of the core technique"
+        },
+        {
+          "criterion": "consistency",
+          "description": "Repeats the technique accurately across reps, both feet where required"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Works at match-like tempo and focus throughout"
+        }
+      ],
+      "progression": "Head to targets, then head under light defensive pressure.",
+      "video_note": "Slow-motion front view of contact point and neck position.",
+      "safety_note": "Follow your federation's youth heading guidance; limit repetitions and ball pressure for younger age bands."
+    },
+    {
+      "id": "he-002",
+      "name": "Defensive vs. Attacking Heading",
+      "category": "heading",
+      "subcategory": "technique",
+      "format": "pairs",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "DF",
+        "FW",
+        "MF"
+      ],
+      "duration_min": 15,
+      "intensity": "medium",
+      "equipment": [
+        "balls"
+      ],
+      "description": "Contrast block: defensive headers (height, distance, wide) vs. attacking headers (downward, powered toward corners).",
+      "coaching_points": [
+        "Defensive: head under the ball, up and away",
+        "Attacking: head down on top of the ball toward goal",
+        "Jump timing: meet it at the highest point"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Correct body shape and execution of the core technique"
+        },
+        {
+          "criterion": "consistency",
+          "description": "Repeats the technique accurately across reps, both feet where required"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Works at match-like tempo and focus throughout"
+        }
+      ],
+      "progression": "Contest both types from crossed deliveries with a live opponent.",
+      "video_note": "Split-screen of the two contact shapes.",
+      "safety_note": "Follow your federation's youth heading guidance; limit repetitions for younger age bands."
+    },
+    {
+      "id": "he-003",
+      "name": "Heading from Crosses (Near-Post Flick, Far-Post Power)",
+      "category": "heading",
+      "subcategory": "cross_heading",
+      "format": "small_group",
+      "age_bands": [
+        "17-19"
+      ],
+      "positions": [
+        "FW",
+        "DF",
+        "MF"
+      ],
+      "duration_min": 20,
+      "intensity": "medium",
+      "equipment": [
+        "balls",
+        "goal",
+        "crossers"
+      ],
+      "description": "Timed runs to attack crosses: near-post flick-ons and far-post power headers, from both flanks.",
+      "coaching_points": [
+        "Curve the run to attack the ball, not wait for it",
+        "Near post: glance across; far post: head down and back across",
+        "Hold the finish - follow the rebound"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Clean execution of pass, touch, or finish"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Chooses the right option quickly under pressure"
+        },
+        {
+          "criterion": "execution",
+          "description": "End product: accuracy of final action (pass, cross, shot)"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Tempo and movement quality match game speed"
+        }
+      ],
+      "progression": "Add a marking defender and GK communication element.",
+      "video_note": "Wide angle showing run timing plus a behind-goal angle of contact.",
+      "safety_note": "Follow your federation's youth heading guidance on volume."
+    },
+    {
+      "id": "he-004",
+      "name": "Aerial Duels 1v1/2v2",
+      "category": "heading",
+      "subcategory": "duels",
+      "format": "small_group",
+      "age_bands": [
+        "17-19"
+      ],
+      "positions": [
+        "DF",
+        "FW"
+      ],
+      "duration_min": 20,
+      "intensity": "medium",
+      "equipment": [
+        "balls",
+        "goals or target zones"
+      ],
+      "description": "Contested aerial balls from serves and long kicks: attackers head at goal, defenders head clear. Points for wins.",
+      "coaching_points": [
+        "Get goalside/attack side of your opponent",
+        "Jump through the line of the ball",
+        "Win the second ball after every duel"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Clean execution of pass, touch, or finish"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Chooses the right option quickly under pressure"
+        },
+        {
+          "criterion": "execution",
+          "description": "End product: accuracy of final action (pass, cross, shot)"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Tempo and movement quality match game speed"
+        }
+      ],
+      "progression": "Play 2v2 with knockdowns - second-ball finishes count double.",
+      "video_note": "Side view showing take-off timing and body contact rules.",
+      "safety_note": "Manage total heading volume per session for youth players."
+    },
+    {
+      "id": "he-005",
+      "name": "Second-Ball Games",
+      "category": "heading",
+      "subcategory": "second_balls",
+      "format": "group",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 20,
+      "intensity": "high",
+      "equipment": [
+        "balls",
+        "cones",
+        "bibs",
+        "goals"
+      ],
+      "description": "Conditioned game starting from an aerial ball: points for winning the knockdown and for the team that controls the second ball.",
+      "coaching_points": [
+        "Anticipate where the knockdown lands",
+        "Attack the second ball at full speed",
+        "Compact shape behind the duel"
+      ],
+      "rubric": [
+        {
+          "criterion": "positioning",
+          "description": "Occupies correct zones relative to ball, teammates, opponents"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Applies the game-model principle being trained"
+        },
+        {
+          "criterion": "communication",
+          "description": "Organises and informs teammates verbally and with gestures"
+        },
+        {
+          "criterion": "awareness",
+          "description": "Scans before receiving; knows next action in advance"
+        }
+      ],
+      "progression": "Chain to a quick finish: goal only counts within 8 seconds of winning the second ball.",
+      "video_note": "Wide tactical angle showing duel plus second-ball reactions."
+    },
+    {
+      "id": "de-001",
+      "name": "Defensive Stance & Footwork",
+      "category": "defending",
+      "subcategory": "individual_technique",
+      "format": "individual",
+      "age_bands": [
+        "13-14",
+        "15-16"
+      ],
+      "positions": [
+        "DF",
+        "MF"
+      ],
+      "duration_min": 15,
+      "intensity": "low",
+      "equipment": [
+        "cones"
+      ],
+      "description": "Shadow defending through a cone pattern: side-on stance, low centre of gravity, small steps, drop steps and recovery turns.",
+      "coaching_points": [
+        "Side-on, knees bent, weight on the balls of the feet",
+        "Never cross your legs - drop step instead",
+        "Eyes on the ball, not the opponent's feet"
+      ],
+      "rubric": [
+        {
+          "criterion": "positioning",
+          "description": "Starting position and body orientation are correct"
+        },
+        {
+          "criterion": "timing",
+          "description": "Chooses the right moment to press, tackle, or intercept"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Reads the play; knows when to delay vs. engage"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Defends with controlled aggression at game speed"
+        }
+      ],
+      "progression": "Add a partner dribbling slowly to shadow, then at full speed.",
+      "video_note": "Front and side views of the stance; slow-motion drop-step breakdown."
+    },
+    {
+      "id": "de-002",
+      "name": "1v1 Defending: Delay, Show Inside/Outside, Tackle Timing",
+      "category": "defending",
+      "subcategory": "1v1_defending",
+      "format": "pairs",
+      "age_bands": [
+        "13-14",
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "DF",
+        "MF"
+      ],
+      "duration_min": 20,
+      "intensity": "high",
+      "equipment": [
+        "balls",
+        "cones",
+        "goals"
+      ],
+      "description": "Attacker vs defender to goal or end line. Defender works on approach speed, slowing on arrival, dictating direction, and choosing the tackle moment.",
+      "coaching_points": [
+        "Sprint to close, arrive under control",
+        "Show the attacker one way - onto their weak foot or the sideline",
+        "Tackle when the touch is too big, not before"
+      ],
+      "rubric": [
+        {
+          "criterion": "positioning",
+          "description": "Starting position and body orientation are correct"
+        },
+        {
+          "criterion": "timing",
+          "description": "Chooses the right moment to press, tackle, or intercept"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Reads the play; knows when to delay vs. engage"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Defends with controlled aggression at game speed"
+        }
+      ],
+      "progression": "Add a support attacker so the defender must delay for recovering help.",
+      "video_note": "Clip series showing approach, dictation, and tackle moment with freeze-frames."
+    },
+    {
+      "id": "de-003",
+      "name": "Tackling Technique (Block & Poke)",
+      "category": "defending",
+      "subcategory": "tackling",
+      "format": "pairs",
+      "age_bands": [
+        "13-14",
+        "15-16"
+      ],
+      "positions": [
+        "DF",
+        "MF"
+      ],
+      "duration_min": 15,
+      "intensity": "medium",
+      "equipment": [
+        "balls",
+        "cones"
+      ],
+      "description": "Technique block for block tackles (through the ball, big contact surface) and poke tackles (toe through the ball when alongside).",
+      "coaching_points": [
+        "Block tackle: low, firm ankle, drive through the ball",
+        "Poke: use the foot nearest the ball only",
+        "Stay on your feet - sliding is the last resort"
+      ],
+      "rubric": [
+        {
+          "criterion": "positioning",
+          "description": "Starting position and body orientation are correct"
+        },
+        {
+          "criterion": "timing",
+          "description": "Chooses the right moment to press, tackle, or intercept"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Reads the play; knows when to delay vs. engage"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Defends with controlled aggression at game speed"
+        }
+      ],
+      "progression": "Apply both tackles in a live 1v1 corridor game.",
+      "video_note": "Slow-motion of each tackle type from the side; contact frames highlighted."
+    },
+    {
+      "id": "de-004",
+      "name": "Interceptions: Reading the Pass",
+      "category": "defending",
+      "subcategory": "interceptions",
+      "format": "pairs",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "DF",
+        "MF"
+      ],
+      "duration_min": 15,
+      "intensity": "medium",
+      "equipment": [
+        "balls",
+        "cones"
+      ],
+      "description": "Defender starts between two receivers; server plays to either. Defender reads the passer's shape, anticipates, and intercepts or blocks.",
+      "coaching_points": [
+        "Read the passer's hips and plant foot",
+        "Stay goalside but within interception distance",
+        "First touch after the intercept goes forward"
+      ],
+      "rubric": [
+        {
+          "criterion": "positioning",
+          "description": "Starting position and body orientation are correct"
+        },
+        {
+          "criterion": "timing",
+          "description": "Chooses the right moment to press, tackle, or intercept"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Reads the play; knows when to delay vs. engage"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Defends with controlled aggression at game speed"
+        }
+      ],
+      "progression": "Add a third receiver and a decision: intercept high or protect the goal.",
+      "video_note": "Overhead angle showing starting position and the interception lane."
+    },
+    {
+      "id": "de-005",
+      "name": "Defending in Pairs: Cover & Balance",
+      "category": "defending",
+      "subcategory": "unit_defending",
+      "format": "small_group",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "DF",
+        "MF"
+      ],
+      "duration_min": 20,
+      "intensity": "medium",
+      "equipment": [
+        "balls",
+        "cones",
+        "bibs"
+      ],
+      "description": "Two defenders vs two attackers with a coach serving. First defender presses, second covers at an angle and distance; roles swap on every pass.",
+      "coaching_points": [
+        "Press and cover - never both square",
+        "Cover distance: close enough to intercept the switch",
+        "Communicate 'press', 'hold', 'show left/right'"
+      ],
+      "rubric": [
+        {
+          "criterion": "positioning",
+          "description": "Starting position and body orientation are correct"
+        },
+        {
+          "criterion": "timing",
+          "description": "Chooses the right moment to press, tackle, or intercept"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Reads the play; knows when to delay vs. engage"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Defends with controlled aggression at game speed"
+        }
+      ],
+      "progression": "Extend to 3v3 with a third defender providing balance on the weak side.",
+      "video_note": "Tactical wide angle with cover distances highlighted on freeze-frames."
+    },
+    {
+      "id": "de-006",
+      "name": "Pressing Triggers & Coordinated Press",
+      "category": "defending",
+      "subcategory": "pressing",
+      "format": "group",
+      "age_bands": [
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 30,
+      "intensity": "high",
+      "equipment": [
+        "balls",
+        "cones",
+        "bibs",
+        "goals"
+      ],
+      "description": "Unit work on pressing triggers (back pass, bad touch, pass to the line) and the coordinated press: who jumps, who screens, who covers behind.",
+      "coaching_points": [
+        "One jumps, everyone shifts - press as a unit",
+        "Trigger recognition: back passes and poor first touches",
+        "Curve the run to block the return pass"
+      ],
+      "rubric": [
+        {
+          "criterion": "positioning",
+          "description": "Starting position and body orientation are correct"
+        },
+        {
+          "criterion": "timing",
+          "description": "Chooses the right moment to press, tackle, or intercept"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Reads the play; knows when to delay vs. engage"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Defends with controlled aggression at game speed"
+        }
+      ],
+      "progression": "Live game where pressing successfully in the final third earns double goals.",
+      "video_note": "Full-pitch tactical cam with trigger moments freeze-framed and labelled."
+    },
+    {
+      "id": "de-007",
+      "name": "Recovery Runs & Defending the Space Behind",
+      "category": "defending",
+      "subcategory": "recovery",
+      "format": "small_group",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "DF"
+      ],
+      "duration_min": 15,
+      "intensity": "high",
+      "equipment": [
+        "balls",
+        "cones",
+        "goal",
+        "GK"
+      ],
+      "description": "Defender starts goalside-wrong; on the coach's ball in behind, sprints to recover and defend the runner 1v1 before the shot.",
+      "coaching_points": [
+        "Sprint on a line to goal first, then to the ball",
+        "Get between ball and goal before engaging",
+        "Slow the attacker without diving in"
+      ],
+      "rubric": [
+        {
+          "criterion": "positioning",
+          "description": "Starting position and body orientation are correct"
+        },
+        {
+          "criterion": "timing",
+          "description": "Chooses the right moment to press, tackle, or intercept"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Reads the play; knows when to delay vs. engage"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Defends with controlled aggression at game speed"
+        }
+      ],
+      "progression": "Two attackers vs one recovering defender - decision under overload.",
+      "video_note": "Chase-cam angle showing the recovery line and the moment of engagement."
+    },
+    {
+      "id": "de-008",
+      "name": "Defending the Box: Marking & Clearances",
+      "category": "defending",
+      "subcategory": "box_defending",
+      "format": "group",
+      "age_bands": [
+        "17-19"
+      ],
+      "positions": [
+        "DF",
+        "GK"
+      ],
+      "duration_min": 25,
+      "intensity": "medium",
+      "equipment": [
+        "balls",
+        "goal",
+        "crossers"
+      ],
+      "description": "Back line plus GK defending repeated crosses: starting positions, zonal vs. man responsibilities, attacking the clearance, and holding the line on the exit.",
+      "coaching_points": [
+        "See ball and man - side-on, arm's contact",
+        "Attack the ball for clearances - no free headers",
+        "Step out together after the clearance"
+      ],
+      "rubric": [
+        {
+          "criterion": "positioning",
+          "description": "Starting position and body orientation are correct"
+        },
+        {
+          "criterion": "timing",
+          "description": "Chooses the right moment to press, tackle, or intercept"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Reads the play; knows when to delay vs. engage"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Defends with controlled aggression at game speed"
+        }
+      ],
+      "progression": "Add second-ball attackers and a counter-attack target on the clearance.",
+      "video_note": "Behind-goal and wide angles; freeze-frames on starting positions."
+    },
+    {
+      "id": "de-009",
+      "name": "Defensive Line Shape (Back Four / Back Three)",
+      "category": "defending",
+      "subcategory": "line_shape",
+      "format": "group",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "DF"
+      ],
+      "duration_min": 25,
+      "intensity": "medium",
+      "equipment": [
+        "balls",
+        "cones",
+        "mannequins or attackers"
+      ],
+      "description": "Unit shadow play: the back line shifts, slides, steps and drops in response to the ball's position, rehearsing distances and communication.",
+      "coaching_points": [
+        "Defend as a connected unit - max gaps between defenders",
+        "Ball side steps, far side tucks in",
+        "Line leader (usually CB) commands the step and drop"
+      ],
+      "rubric": [
+        {
+          "criterion": "positioning",
+          "description": "Starting position and body orientation are correct"
+        },
+        {
+          "criterion": "timing",
+          "description": "Chooses the right moment to press, tackle, or intercept"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Reads the play; knows when to delay vs. engage"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Defends with controlled aggression at game speed"
+        }
+      ],
+      "progression": "Play against live attackers with offsides active.",
+      "video_note": "Full-width tactical cam with a grid overlay showing line distances."
+    },
+    {
+      "id": "ta-001",
+      "name": "Small-Sided Games (3v3 / 4v4 / 5v5)",
+      "category": "tactical",
+      "subcategory": "small_sided_games",
+      "format": "group",
+      "age_bands": [
+        "13-14",
+        "15-16"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 25,
+      "intensity": "high",
+      "equipment": [
+        "balls",
+        "cones",
+        "bibs",
+        "mini-goals"
+      ],
+      "description": "Free small-sided games on small pitches. High involvement, many decisions, natural repetition of core principles. Coach with guided questions, not constant stoppages.",
+      "coaching_points": [
+        "Let the game teach - intervene with questions",
+        "Width and depth in possession, compactness out of it",
+        "Rotate players so everyone attacks and defends"
+      ],
+      "rubric": [
+        {
+          "criterion": "positioning",
+          "description": "Occupies correct zones relative to ball, teammates, opponents"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Applies the game-model principle being trained"
+        },
+        {
+          "criterion": "communication",
+          "description": "Organises and informs teammates verbally and with gestures"
+        },
+        {
+          "criterion": "awareness",
+          "description": "Scans before receiving; knows next action in advance"
+        }
+      ],
+      "progression": "Add conditions tied to the session theme (e.g., goal counts double after a switch of play).",
+      "video_note": "Wide fixed angle of a full round; capture goals and key decisions."
+    },
+    {
+      "id": "ta-002",
+      "name": "Positional Games (Juego de Posicion)",
+      "category": "tactical",
+      "subcategory": "positional_play",
+      "format": "group",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 25,
+      "intensity": "medium",
+      "equipment": [
+        "balls",
+        "cones",
+        "bibs"
+      ],
+      "description": "Zoned positional games (e.g., 4v4+3) where players must occupy their zones. Trains positioning, angles, and playing through lines per your game model.",
+      "coaching_points": [
+        "Occupy your zone - trust the structure",
+        "Play between lines, receive side-on",
+        "Support behind, beside, and beyond the ball"
+      ],
+      "rubric": [
+        {
+          "criterion": "positioning",
+          "description": "Occupies correct zones relative to ball, teammates, opponents"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Applies the game-model principle being trained"
+        },
+        {
+          "criterion": "communication",
+          "description": "Organises and informs teammates verbally and with gestures"
+        },
+        {
+          "criterion": "awareness",
+          "description": "Scans before receiving; knows next action in advance"
+        }
+      ],
+      "progression": "Add a counter-pressing rule on loss and transition targets at the edges.",
+      "video_note": "Overhead angle with zone lines visible; freeze on line-breaking passes."
+    },
+    {
+      "id": "ta-003",
+      "name": "Phases of Play: Build-Up, Progression, Final Third",
+      "category": "tactical",
+      "subcategory": "phases_of_play",
+      "format": "group",
+      "age_bands": [
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 35,
+      "intensity": "medium",
+      "equipment": [
+        "balls",
+        "cones",
+        "bibs",
+        "goals"
+      ],
+      "description": "Coached walk-through to game-speed rehearsal of one phase at a time: building from the GK, progressing through midfield, and final-third combinations.",
+      "coaching_points": [
+        "Start positions must match your match-day shape",
+        "Every pass has a pre-planned next action",
+        "Recognise when to break the pattern and improvise"
+      ],
+      "rubric": [
+        {
+          "criterion": "positioning",
+          "description": "Occupies correct zones relative to ball, teammates, opponents"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Applies the game-model principle being trained"
+        },
+        {
+          "criterion": "communication",
+          "description": "Organises and informs teammates verbally and with gestures"
+        },
+        {
+          "criterion": "awareness",
+          "description": "Scans before receiving; knows next action in advance"
+        }
+      ],
+      "progression": "Chain all three phases into one continuous attack against a live defence.",
+      "video_note": "Full-pitch tactical cam per phase with freeze-frames on rotation triggers."
+    },
+    {
+      "id": "ta-004",
+      "name": "Transition Games (5-Second Rule)",
+      "category": "tactical",
+      "subcategory": "transitions",
+      "format": "group",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 25,
+      "intensity": "high",
+      "equipment": [
+        "balls",
+        "cones",
+        "bibs",
+        "goals"
+      ],
+      "description": "Possession game with a hard transition rule: on loss, counter-press for 5 seconds; on regain, play forward within 5 seconds. Goals scored in transition count double.",
+      "coaching_points": [
+        "Nearest player presses the ball instantly",
+        "On regain: first look forward",
+        "Rest defence stays connected while attacking"
+      ],
+      "rubric": [
+        {
+          "criterion": "positioning",
+          "description": "Occupies correct zones relative to ball, teammates, opponents"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Applies the game-model principle being trained"
+        },
+        {
+          "criterion": "communication",
+          "description": "Organises and informs teammates verbally and with gestures"
+        },
+        {
+          "criterion": "awareness",
+          "description": "Scans before receiving; knows next action in advance"
+        }
+      ],
+      "progression": "Vary the rule by phase: 3-second counter-press for older groups.",
+      "video_note": "Wide angle capturing the moment of turnover and both teams' reactions."
+    },
+    {
+      "id": "ta-005",
+      "name": "Conditioned Overload Games (4v2, 5v3 to Goal)",
+      "category": "tactical",
+      "subcategory": "overloads",
+      "format": "group",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 25,
+      "intensity": "high",
+      "equipment": [
+        "balls",
+        "cones",
+        "bibs",
+        "goals"
+      ],
+      "description": "Attack vs defence with deliberate overloads. Attackers learn patience and width; defenders learn to delay, screen, and protect the centre.",
+      "coaching_points": [
+        "Attack: move the ball fast to stretch the block",
+        "Defence: protect the middle, show wide",
+        "Finish the attack quickly when the gap opens"
+      ],
+      "rubric": [
+        {
+          "criterion": "positioning",
+          "description": "Occupies correct zones relative to ball, teammates, opponents"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Applies the game-model principle being trained"
+        },
+        {
+          "criterion": "communication",
+          "description": "Organises and informs teammates verbally and with gestures"
+        },
+        {
+          "criterion": "awareness",
+          "description": "Scans before receiving; knows next action in advance"
+        }
+      ],
+      "progression": "Flip the overload (underload attack) to train individual superiority and combination quality.",
+      "video_note": "Tactical wide angle; annotate the moment the overload creates the free player."
+    },
+    {
+      "id": "ta-006",
+      "name": "Team Video Analysis Session",
+      "category": "tactical",
+      "subcategory": "video_analysis",
+      "format": "group",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 30,
+      "intensity": "low",
+      "equipment": [
+        "screen or projector",
+        "match/training footage"
+      ],
+      "description": "Guided team review of short clips (30-60s) tied to the current training theme. Players answer: what do you see, what are the options, what was the best choice?",
+      "coaching_points": [
+        "One theme per session - don't review everything",
+        "Ask players before telling them",
+        "Link every clip back to a training drill"
+      ],
+      "rubric": [
+        {
+          "criterion": "positioning",
+          "description": "Occupies correct zones relative to ball, teammates, opponents"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Applies the game-model principle being trained"
+        },
+        {
+          "criterion": "communication",
+          "description": "Organises and informs teammates verbally and with gestures"
+        },
+        {
+          "criterion": "awareness",
+          "description": "Scans before receiving; knows next action in advance"
+        }
+      ],
+      "progression": "Assign players to present a clip themselves - ownership accelerates learning.",
+      "video_note": "Example annotated clip with telestration (arrows, zones, player tracks)."
+    },
+    {
+      "id": "ta-007",
+      "name": "Individual Tactical Video Review",
+      "category": "tactical",
+      "subcategory": "video_analysis",
+      "format": "individual",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 20,
+      "intensity": "low",
+      "equipment": [
+        "personal clips",
+        "video platform"
+      ],
+      "description": "Player watches 5-10 of their own clips (good and bad decisions) with coach annotations and leaves written or voice-note reflections. Pairs directly with the self-feedback feature.",
+      "coaching_points": [
+        "Review decisions, not just highlights",
+        "Pause before each key moment: what were the options?",
+        "Finish with one concrete focus for the next session"
+      ],
+      "rubric": [
+        {
+          "criterion": "engagement",
+          "description": "Completes the exercise fully and honestly"
+        },
+        {
+          "criterion": "application",
+          "description": "Shows evidence of applying the skill in training/matches"
+        },
+        {
+          "criterion": "reflection_quality",
+          "description": "Self-assessment is specific, balanced, and actionable"
+        }
+      ],
+      "progression": "Player tags and annotates their own clips before the coach reviews them.",
+      "video_note": "Example of an annotated individual clip with coach voice-over."
+    },
+    {
+      "id": "gk-001",
+      "name": "Catching Foundations (W-Shape, Scoop, High Ball)",
+      "category": "goalkeeping",
+      "subcategory": "handling",
+      "format": "individual",
+      "age_bands": [
+        "13-14",
+        "15-16"
+      ],
+      "positions": [
+        "GK"
+      ],
+      "duration_min": 20,
+      "intensity": "medium",
+      "equipment": [
+        "balls",
+        "server"
+      ],
+      "description": "Core handling block: W-shape for head-height balls, diamond/scoop for low balls, and secure high-ball catching. Served at controlled pace, building speed.",
+      "coaching_points": [
+        "Set position before every serve",
+        "Hands first, body behind the ball as insurance",
+        "Soft elbows - cushion the catch into the body"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Correct set position, hand shape, and body alignment"
+        },
+        {
+          "criterion": "positioning",
+          "description": "Angles and starting position appropriate to the ball"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Chooses catch/parry/claim/distribute correctly"
+        },
+        {
+          "criterion": "communication",
+          "description": "Commands the area and organises defenders"
+        }
+      ],
+      "progression": "Randomise serve height and add footwork before each catch.",
+      "video_note": "Front close-up of hand shapes plus full-body view of the set position."
+    },
+    {
+      "id": "gk-002",
+      "name": "Diving Technique (Collapse, Low, Full Extension)",
+      "category": "goalkeeping",
+      "subcategory": "shot_stopping",
+      "format": "individual",
+      "age_bands": [
+        "13-14",
+        "15-16"
+      ],
+      "positions": [
+        "GK"
+      ],
+      "duration_min": 20,
+      "intensity": "medium",
+      "equipment": [
+        "balls",
+        "server",
+        "crash mat for early reps"
+      ],
+      "description": "Progressive diving block: collapse dive from kneeling, low dive from standing, then full extension. Both sides equally.",
+      "coaching_points": [
+        "First step toward the ball, hands lead",
+        "Land on the side, not the stomach or elbows",
+        "Attack the ball - don't wait for it"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Correct set position, hand shape, and body alignment"
+        },
+        {
+          "criterion": "positioning",
+          "description": "Angles and starting position appropriate to the ball"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Chooses catch/parry/claim/distribute correctly"
+        },
+        {
+          "criterion": "communication",
+          "description": "Commands the area and organises defenders"
+        }
+      ],
+      "progression": "Add a deflection or a second-ball reaction after the save.",
+      "video_note": "Slow-motion side view of each dive type with the first-step highlighted."
+    },
+    {
+      "id": "gk-003",
+      "name": "Shot-Stopping from Angles & Near-Post Positioning",
+      "category": "goalkeeping",
+      "subcategory": "shot_stopping",
+      "format": "pairs",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "GK"
+      ],
+      "duration_min": 20,
+      "intensity": "high",
+      "equipment": [
+        "balls",
+        "goal",
+        "shooters"
+      ],
+      "description": "Shots from wide and central angles at varied distances. Focus on angle play, near-post coverage, and set timing relative to the strike.",
+      "coaching_points": [
+        "Narrow the angle - come off the line as the shooter approaches",
+        "Set as the striker's foot contacts the ball",
+        "Near post is yours: no goals beaten there"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Correct set position, hand shape, and body alignment"
+        },
+        {
+          "criterion": "positioning",
+          "description": "Angles and starting position appropriate to the ball"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Chooses catch/parry/claim/distribute correctly"
+        },
+        {
+          "criterion": "communication",
+          "description": "Commands the area and organises defenders"
+        }
+      ],
+      "progression": "Add a cutback option so the GK must reposition across goal mid-attack.",
+      "video_note": "Behind-goal angle showing starting position and movement line."
+    },
+    {
+      "id": "gk-004",
+      "name": "Reactions & Reflex Saves",
+      "category": "goalkeeping",
+      "subcategory": "reactions",
+      "format": "pairs",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "GK"
+      ],
+      "duration_min": 15,
+      "intensity": "high",
+      "equipment": [
+        "balls",
+        "server",
+        "rebound board optional"
+      ],
+      "description": "Close-range rapid-fire serves, deflections off a board or mannequin, and seated/lying starts. Trains explosive reactions and recovery.",
+      "coaching_points": [
+        "Stay big - don't shrink at close range",
+        "Recover to set immediately after each save",
+        "Hands up in the ready position at all times"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Correct set position, hand shape, and body alignment"
+        },
+        {
+          "criterion": "positioning",
+          "description": "Angles and starting position appropriate to the ball"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Chooses catch/parry/claim/distribute correctly"
+        },
+        {
+          "criterion": "communication",
+          "description": "Commands the area and organises defenders"
+        }
+      ],
+      "progression": "Random two-server setup: GK must find the ball being served.",
+      "video_note": "Rapid-fire clip showing 5-6 consecutive saves and recoveries."
+    },
+    {
+      "id": "gk-005",
+      "name": "Dealing with Crosses (Catch, Punch, Claim Through Traffic)",
+      "category": "goalkeeping",
+      "subcategory": "crosses",
+      "format": "small_group",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "GK",
+        "DF"
+      ],
+      "duration_min": 25,
+      "intensity": "medium",
+      "equipment": [
+        "balls",
+        "goal",
+        "crossers",
+        "attackers/defenders as traffic"
+      ],
+      "description": "Crosses delivered from both flanks with increasing traffic. GK decides catch vs. punch, attacks the ball at the highest point, and commands the box.",
+      "coaching_points": [
+        "Start deep enough to attack the ball forward",
+        "Call early and loud: 'KEEPER' or 'AWAY'",
+        "Punch high, wide, and far when you can't catch"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Correct set position, hand shape, and body alignment"
+        },
+        {
+          "criterion": "positioning",
+          "description": "Angles and starting position appropriate to the ball"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Chooses catch/parry/claim/distribute correctly"
+        },
+        {
+          "criterion": "communication",
+          "description": "Commands the area and organises defenders"
+        }
+      ],
+      "progression": "Live attackers contesting and a second-ball rule on spills.",
+      "video_note": "Behind-goal angle showing the attack line to the ball and the call timing."
+    },
+    {
+      "id": "gk-006",
+      "name": "1v1 Situations (Closing Down, Spreading, Smothering)",
+      "category": "goalkeeping",
+      "subcategory": "1v1",
+      "format": "pairs",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "GK"
+      ],
+      "duration_min": 20,
+      "intensity": "high",
+      "equipment": [
+        "balls",
+        "goal",
+        "attackers"
+      ],
+      "description": "Through-balls and dribbles at the GK. Decision framework: stay, spread (star jump), block, or smother, based on touch quality and angle.",
+      "coaching_points": [
+        "Sprint to close while the touch is loose",
+        "Spread big and low on the striker's touch",
+        "Smother when the ball is free - hands first, brave"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Correct set position, hand shape, and body alignment"
+        },
+        {
+          "criterion": "positioning",
+          "description": "Angles and starting position appropriate to the ball"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Chooses catch/parry/claim/distribute correctly"
+        },
+        {
+          "criterion": "communication",
+          "description": "Commands the area and organises defenders"
+        }
+      ],
+      "progression": "Add a second attacker so the GK must also cover the square pass.",
+      "video_note": "Striker-cam and behind-goal angles; freeze on the decision moment."
+    },
+    {
+      "id": "gk-007",
+      "name": "Throwing Distribution (Roll, Javelin, Overarm)",
+      "category": "goalkeeping",
+      "subcategory": "distribution",
+      "format": "individual",
+      "age_bands": [
+        "13-14",
+        "15-16"
+      ],
+      "positions": [
+        "GK"
+      ],
+      "duration_min": 15,
+      "intensity": "low",
+      "equipment": [
+        "balls",
+        "target zones"
+      ],
+      "description": "Distribution accuracy block: roll-outs to fullbacks, javelin/sidearm throws to midfielders, and overarm throws to wide targets, all into marked zones.",
+      "coaching_points": [
+        "Roll: low, firm, into the receiver's path",
+        "Javelin: side-on, sling from the hip for distance",
+        "Hit moving targets in stride, not to feet"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Correct set position, hand shape, and body alignment"
+        },
+        {
+          "criterion": "positioning",
+          "description": "Angles and starting position appropriate to the ball"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Chooses catch/parry/claim/distribute correctly"
+        },
+        {
+          "criterion": "communication",
+          "description": "Commands the area and organises defenders"
+        }
+      ],
+      "progression": "Add a time pressure: distribute within 3 seconds of catching.",
+      "video_note": "Side view of each technique plus a wide shot of zone accuracy."
+    },
+    {
+      "id": "gk-008",
+      "name": "Kicking Distribution (Goal Kicks, Side Volleys, Drop Kicks)",
+      "category": "goalkeeping",
+      "subcategory": "distribution",
+      "format": "individual",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "GK"
+      ],
+      "duration_min": 20,
+      "intensity": "medium",
+      "equipment": [
+        "balls",
+        "goal",
+        "target zones"
+      ],
+      "description": "Full kicking block: goal kicks to wide zones, driven side volleys to midfield targets, and drop kicks for distance. Accuracy scored per zone.",
+      "coaching_points": [
+        "Body shape matches the intended flight",
+        "Strike through the bottom half for loft, middle for driven",
+        "Scan before receiving - distribution starts before the catch"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Correct set position, hand shape, and body alignment"
+        },
+        {
+          "criterion": "positioning",
+          "description": "Angles and starting position appropriate to the ball"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Chooses catch/parry/claim/distribute correctly"
+        },
+        {
+          "criterion": "communication",
+          "description": "Commands the area and organises defenders"
+        }
+      ],
+      "progression": "Distribute to moving targets making timed runs into zones.",
+      "video_note": "Wide view of ball flight to zones; slow-motion contact insert."
+    },
+    {
+      "id": "gk-009",
+      "name": "Playing Out from the Back (GK + Defenders)",
+      "category": "goalkeeping",
+      "subcategory": "build_up",
+      "format": "group",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "GK",
+        "DF",
+        "MF"
+      ],
+      "duration_min": 25,
+      "intensity": "medium",
+      "equipment": [
+        "balls",
+        "cones",
+        "bibs"
+      ],
+      "description": "GK as the first attacker: building with centre-backs split, pivot drops, and fullbacks high, against a passive then active first line of pressure.",
+      "coaching_points": [
+        "GK comfortable on both feet - receive side-on",
+        "Defenders open body shape to play forward",
+        "Recognise the press: bounce, switch, or go over it"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Correct set position, hand shape, and body alignment"
+        },
+        {
+          "criterion": "positioning",
+          "description": "Angles and starting position appropriate to the ball"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Chooses catch/parry/claim/distribute correctly"
+        },
+        {
+          "criterion": "communication",
+          "description": "Commands the area and organises defenders"
+        }
+      ],
+      "progression": "Live pressing front three; conceding or losing the ball has consequences.",
+      "video_note": "Tactical wide angle with the pressing shape and passing lanes highlighted."
+    },
+    {
+      "id": "gk-010",
+      "name": "Sweeper-Keeper: Through Balls & Playing Behind the Line",
+      "category": "goalkeeping",
+      "subcategory": "sweeper_keeper",
+      "format": "small_group",
+      "age_bands": [
+        "17-19"
+      ],
+      "positions": [
+        "GK",
+        "DF"
+      ],
+      "duration_min": 20,
+      "intensity": "high",
+      "equipment": [
+        "balls",
+        "cones"
+      ],
+      "description": "Balls played in behind a high line. GK reads the flight early, sprints to clear or receive outside the box, and redistributes or protects.",
+      "coaching_points": [
+        "Starting position: high enough to sweep, deep enough to recover",
+        "Decide early: commit fully or hold the box",
+        "Communicate with the line on every ball in behind"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Correct set position, hand shape, and body alignment"
+        },
+        {
+          "criterion": "positioning",
+          "description": "Angles and starting position appropriate to the ball"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Chooses catch/parry/claim/distribute correctly"
+        },
+        {
+          "criterion": "communication",
+          "description": "Commands the area and organises defenders"
+        }
+      ],
+      "progression": "Live striker timing runs against a real defensive line with offsides active.",
+      "video_note": "Tactical cam showing starting position, the trigger ball, and the clearance."
+    },
+    {
+      "id": "gk-011",
+      "name": "Organising the Defence & Set-Piece Command",
+      "category": "goalkeeping",
+      "subcategory": "communication",
+      "format": "group",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "GK",
+        "DF"
+      ],
+      "duration_min": 20,
+      "intensity": "low",
+      "equipment": [
+        "balls",
+        "cones",
+        "bibs"
+      ],
+      "description": "Walk-through to live set pieces and open play where the GK's communication is the measured skill: marking assignments, line height, and early warnings.",
+      "coaching_points": [
+        "Talk early - before the ball is played, not after",
+        "Short, specific commands with names",
+        "Own the six-yard box on every delivery"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Correct set position, hand shape, and body alignment"
+        },
+        {
+          "criterion": "positioning",
+          "description": "Angles and starting position appropriate to the ball"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Chooses catch/parry/claim/distribute correctly"
+        },
+        {
+          "criterion": "communication",
+          "description": "Commands the area and organises defenders"
+        }
+      ],
+      "progression": "Score the defensive unit's organisation on set pieces with the GK as the conductor.",
+      "video_note": "Clip with audio: GK's calls audible before and during set pieces."
+    },
+    {
+      "id": "sp-001",
+      "name": "Attacking Corner Routines",
+      "category": "set_pieces",
+      "subcategory": "corners_attacking",
+      "format": "group",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 25,
+      "intensity": "medium",
+      "equipment": [
+        "balls",
+        "goal",
+        "cones"
+      ],
+      "description": "Rehearse 2-3 corner routines: near-post flick, far-post overload, and short corner. Timed runs, blockers/screens, and delivery targets.",
+      "coaching_points": [
+        "Runs timed to the taker's trigger, not the kick",
+        "Blockers create legal separation for the target runner",
+        "Every routine has a second-ball plan"
+      ],
+      "rubric": [
+        {
+          "criterion": "positioning",
+          "description": "Occupies correct zones relative to ball, teammates, opponents"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Applies the game-model principle being trained"
+        },
+        {
+          "criterion": "communication",
+          "description": "Organises and informs teammates verbally and with gestures"
+        },
+        {
+          "criterion": "awareness",
+          "description": "Scans before receiving; knows next action in advance"
+        }
+      ],
+      "progression": "Run routines against a live zonal defence; score them like a match.",
+      "video_note": "Overhead diagram of each routine plus live execution clips."
+    },
+    {
+      "id": "sp-002",
+      "name": "Wide Free Kicks: Delivery & Timed Runs",
+      "category": "set_pieces",
+      "subcategory": "free_kicks_wide",
+      "format": "group",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 20,
+      "intensity": "medium",
+      "equipment": [
+        "balls",
+        "goal",
+        "cones"
+      ],
+      "description": "Deliveries from wide free-kick positions: inswing, outswing, and driven balls, with coordinated runs attacking corridors between GK and defence.",
+      "coaching_points": [
+        "Delivery: hit the corridor of uncertainty",
+        "Attackers attack different zones - front, central, back",
+        "One runner stays for the edge-of-box second ball"
+      ],
+      "rubric": [
+        {
+          "criterion": "positioning",
+          "description": "Occupies correct zones relative to ball, teammates, opponents"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Applies the game-model principle being trained"
+        },
+        {
+          "criterion": "communication",
+          "description": "Organises and informs teammates verbally and with gestures"
+        },
+        {
+          "criterion": "awareness",
+          "description": "Scans before receiving; knows next action in advance"
+        }
+      ],
+      "progression": "Live defensive line with GK; track conversion rate per delivery type.",
+      "video_note": "Wide angle showing the delivery arc and the run corridors."
+    },
+    {
+      "id": "sp-003",
+      "name": "Direct Free-Kick Technique (Over & Around the Wall)",
+      "category": "set_pieces",
+      "subcategory": "free_kicks_direct",
+      "format": "individual",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "MF",
+        "FW",
+        "DF"
+      ],
+      "duration_min": 20,
+      "intensity": "low",
+      "equipment": [
+        "balls",
+        "goal",
+        "mannequin wall"
+      ],
+      "description": "Individual repetition block: whip over the wall and curl around it from 18-28m. Log strike location and outcome for trend tracking.",
+      "coaching_points": [
+        "Consistent run-up and plant position every time",
+        "Whip: strike low-inside, snap over the ball",
+        "Around: outside-foot curl or inside-foot bend - pick your side"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Correct body shape and execution of the core technique"
+        },
+        {
+          "criterion": "consistency",
+          "description": "Repeats the technique accurately across reps, both feet where required"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Works at match-like tempo and focus throughout"
+        }
+      ],
+      "progression": "Add a live jumping wall and a GK; keep a personal conversion log.",
+      "video_note": "Slow-motion contact frames for both techniques plus a goal-cam of the flight."
+    },
+    {
+      "id": "sp-004",
+      "name": "Direct Free-Kick Routines",
+      "category": "set_pieces",
+      "subcategory": "free_kicks_direct",
+      "format": "group",
+      "age_bands": [
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 20,
+      "intensity": "medium",
+      "equipment": [
+        "balls",
+        "goal",
+        "mannequin wall"
+      ],
+      "description": "Multi-player free-kick routines: layoff-and-strike, decoy runners, and short passes to change the angle. Rehearsed at game speed.",
+      "coaching_points": [
+        "Decoy runs must be believable",
+        "Layoff weight: perfect for the striker's first-time hit",
+        "Everyone knows the signal for each routine"
+      ],
+      "rubric": [
+        {
+          "criterion": "positioning",
+          "description": "Occupies correct zones relative to ball, teammates, opponents"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Applies the game-model principle being trained"
+        },
+        {
+          "criterion": "communication",
+          "description": "Organises and informs teammates verbally and with gestures"
+        },
+        {
+          "criterion": "awareness",
+          "description": "Scans before receiving; knows next action in advance"
+        }
+      ],
+      "progression": "Opposing wall and GK live; choose the routine based on the wall setup.",
+      "video_note": "Overhead diagram per routine plus live clips."
+    },
+    {
+      "id": "sp-005",
+      "name": "Throw-In Routines",
+      "category": "set_pieces",
+      "subcategory": "throw_ins",
+      "format": "group",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 15,
+      "intensity": "low",
+      "equipment": [
+        "balls",
+        "cones"
+      ],
+      "description": "Structured throw-ins in all thirds: creating the free receiver, long throws into the box (if a specialist), and safe retention patterns in your own third.",
+      "coaching_points": [
+        "Move before the thrower picks the ball up",
+        "Check away then come short - create two options",
+        "Defensive third: retention first, always"
+      ],
+      "rubric": [
+        {
+          "criterion": "positioning",
+          "description": "Occupies correct zones relative to ball, teammates, opponents"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Applies the game-model principle being trained"
+        },
+        {
+          "criterion": "communication",
+          "description": "Organises and informs teammates verbally and with gestures"
+        },
+        {
+          "criterion": "awareness",
+          "description": "Scans before receiving; knows next action in advance"
+        }
+      ],
+      "progression": "Live marking; score by whether possession is retained 10 seconds after the throw.",
+      "video_note": "Overhead diagram of movements plus live examples in each third."
+    },
+    {
+      "id": "sp-006",
+      "name": "Penalty Technique & Pre-Shot Routine",
+      "category": "set_pieces",
+      "subcategory": "penalties",
+      "format": "individual",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 15,
+      "intensity": "low",
+      "equipment": [
+        "balls",
+        "goal",
+        "GK"
+      ],
+      "description": "Repeatable penalty process: consistent run-up, placement over power, a decided target, and a personal pre-shot breathing routine. Log outcomes per corner.",
+      "coaching_points": [
+        "Decide the corner before the run-up - and commit",
+        "Breathe, visualise, execute: same routine every time",
+        "Placement beats power under pressure"
+      ],
+      "rubric": [
+        {
+          "criterion": "technique",
+          "description": "Correct body shape and execution of the core technique"
+        },
+        {
+          "criterion": "consistency",
+          "description": "Repeats the technique accurately across reps, both feet where required"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Works at match-like tempo and focus throughout"
+        }
+      ],
+      "progression": "Simulate match pressure: score or run, crowd noise, or end-of-session deciders.",
+      "video_note": "Goal-cam of technique plus a walkthrough of the pre-shot routine."
+    },
+    {
+      "id": "sp-007",
+      "name": "Defensive Corners (Zonal, Man, Hybrid)",
+      "category": "set_pieces",
+      "subcategory": "corners_defending",
+      "format": "group",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 25,
+      "intensity": "medium",
+      "equipment": [
+        "balls",
+        "goal",
+        "cones",
+        "bibs"
+      ],
+      "description": "Set up and rehearse your defensive corner system: zonal line on the six-yard box, man-marking assignments, or a hybrid. Includes roles for the edge and counter-attack outlets.",
+      "coaching_points": [
+        "Zonal defenders attack the ball in their zone",
+        "Man markers: goalside, ball-side, physical",
+        "Two players positioned for the counter on clearance"
+      ],
+      "rubric": [
+        {
+          "criterion": "positioning",
+          "description": "Starting position and body orientation are correct"
+        },
+        {
+          "criterion": "timing",
+          "description": "Chooses the right moment to press, tackle, or intercept"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Reads the play; knows when to delay vs. engage"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Defends with controlled aggression at game speed"
+        }
+      ],
+      "progression": "Defend live attacking routines; review on video and track first-contact win rate.",
+      "video_note": "Behind-goal and wide angles with each player's zone/assignment annotated."
+    },
+    {
+      "id": "sp-008",
+      "name": "Defensive Free Kicks: Wall Setup & GK Positioning",
+      "category": "set_pieces",
+      "subcategory": "free_kicks_defending",
+      "format": "group",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 15,
+      "intensity": "low",
+      "equipment": [
+        "balls",
+        "goal",
+        "mannequins or players as takers"
+      ],
+      "description": "Wall construction by distance and angle: wall size, who anchors it, jump/no-jump calls, and GK positioning behind the wall's protection.",
+      "coaching_points": [
+        "Wall sizes by zone: pre-agreed numbers",
+        "Anchor sets the wall on the near-post line",
+        "GK positions to own the far half of the goal"
+      ],
+      "rubric": [
+        {
+          "criterion": "positioning",
+          "description": "Starting position and body orientation are correct"
+        },
+        {
+          "criterion": "timing",
+          "description": "Chooses the right moment to press, tackle, or intercept"
+        },
+        {
+          "criterion": "decision_making",
+          "description": "Reads the play; knows when to delay vs. engage"
+        },
+        {
+          "criterion": "intensity",
+          "description": "Defends with controlled aggression at game speed"
+        }
+      ],
+      "progression": "Live takers with routine options; the unit must reset quickly between reps.",
+      "video_note": "Overhead diagram of wall geometry plus GK-eye-view positioning clip."
+    },
+    {
+      "id": "ph-001",
+      "name": "Acceleration Mechanics (0-10m)",
+      "category": "physical",
+      "subcategory": "speed",
+      "format": "individual",
+      "age_bands": [
+        "13-14",
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 15,
+      "intensity": "high",
+      "equipment": [
+        "cones"
+      ],
+      "description": "Short-distance sprint mechanics: forward lean, piston legs, powerful arm drive, and low heel recovery over the first 10 metres.",
+      "coaching_points": [
+        "Push the ground away behind you",
+        "Head still, eyes forward, aggressive arms",
+        "Full recovery between reps - speed work is not conditioning"
+      ],
+      "rubric": [
+        {
+          "criterion": "execution",
+          "description": "Movement quality and mechanics are correct"
+        },
+        {
+          "criterion": "effort",
+          "description": "Hits target intensities and completes all prescribed reps"
+        },
+        {
+          "criterion": "consistency",
+          "description": "Maintains quality across sets without technical breakdown"
+        }
+      ],
+      "progression": "Resisted sprints (bands/sled) then contrast with free sprints.",
+      "video_note": "Side slow-motion of the first 5 steps compared to a reference sprinter."
+    },
+    {
+      "id": "ph-002",
+      "name": "Max Velocity Sprinting",
+      "category": "physical",
+      "subcategory": "speed",
+      "format": "individual",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 15,
+      "intensity": "high",
+      "equipment": [
+        "cones"
+      ],
+      "description": "Flying sprints (20m build + 20m at max) with tall posture, front-side mechanics, and relaxed rhythm. Low volume, full recovery.",
+      "coaching_points": [
+        "Tall hips, strike under the body",
+        "Relax the face and shoulders at top speed",
+        "Quality over quantity - stop when speed drops"
+      ],
+      "rubric": [
+        {
+          "criterion": "execution",
+          "description": "Movement quality and mechanics are correct"
+        },
+        {
+          "criterion": "effort",
+          "description": "Hits target intensities and completes all prescribed reps"
+        },
+        {
+          "criterion": "consistency",
+          "description": "Maintains quality across sets without technical breakdown"
+        }
+      ],
+      "progression": "Time with gates or app-based timing; track personal bests per month.",
+      "video_note": "Side tracking shot at full speed with frame-by-frame contact analysis."
+    },
+    {
+      "id": "ph-003",
+      "name": "Change of Direction (COD) Technique",
+      "category": "physical",
+      "subcategory": "agility",
+      "format": "individual",
+      "age_bands": [
+        "13-14",
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 15,
+      "intensity": "high",
+      "equipment": [
+        "cones"
+      ],
+      "description": "Planned COD patterns (45/90/180-degree cuts, 5-10-5) teaching deceleration, plant mechanics, and re-acceleration.",
+      "coaching_points": [
+        "Brake in short steps, lower the hips before the plant",
+        "Plant outside the centre of mass and push away",
+        "Eyes up to the next line before you're out of the cut"
+      ],
+      "rubric": [
+        {
+          "criterion": "execution",
+          "description": "Movement quality and mechanics are correct"
+        },
+        {
+          "criterion": "effort",
+          "description": "Hits target intensities and completes all prescribed reps"
+        },
+        {
+          "criterion": "consistency",
+          "description": "Maintains quality across sets without technical breakdown"
+        }
+      ],
+      "progression": "Progress to reactive versions where the direction is called late.",
+      "video_note": "Front slow-motion of the plant step; highlight shin angle and hip drop."
+    },
+    {
+      "id": "ph-004",
+      "name": "Reactive Agility (Stimulus-Based)",
+      "category": "physical",
+      "subcategory": "agility",
+      "format": "individual",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 15,
+      "intensity": "high",
+      "equipment": [
+        "cones",
+        "partner or light/app stimulus"
+      ],
+      "description": "Agility with perception: react to a partner's movement, a called colour, or a light. Trains decision-speed, not just movement speed.",
+      "coaching_points": [
+        "Scan the stimulus while moving",
+        "Decelerate under control before redirecting",
+        "First step out of the cut must be explosive"
+      ],
+      "rubric": [
+        {
+          "criterion": "execution",
+          "description": "Movement quality and mechanics are correct"
+        },
+        {
+          "criterion": "effort",
+          "description": "Hits target intensities and completes all prescribed reps"
+        },
+        {
+          "criterion": "consistency",
+          "description": "Maintains quality across sets without technical breakdown"
+        }
+      ],
+      "progression": "Mirror drills against a live opponent - closest thing to match agility.",
+      "video_note": "Clip showing the stimulus and the athlete's response latency."
+    },
+    {
+      "id": "ph-005",
+      "name": "Plyometrics & Landing Mechanics",
+      "category": "physical",
+      "subcategory": "power",
+      "format": "individual",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 20,
+      "intensity": "high",
+      "equipment": [
+        "boxes",
+        "hurdles",
+        "cones"
+      ],
+      "description": "Jump and bound progressions: drop landings, countermovement jumps, hurdle hops, and lateral bounds. Landing quality is trained before jump height.",
+      "coaching_points": [
+        "Land quietly: hips back, knees tracking over toes",
+        "Stick the landing before progressing",
+        "Full recovery between sets"
+      ],
+      "rubric": [
+        {
+          "criterion": "execution",
+          "description": "Movement quality and mechanics are correct"
+        },
+        {
+          "criterion": "effort",
+          "description": "Hits target intensities and completes all prescribed reps"
+        },
+        {
+          "criterion": "consistency",
+          "description": "Maintains quality across sets without technical breakdown"
+        }
+      ],
+      "progression": "Add single-leg variants and reactive jumps off a drop.",
+      "video_note": "Front and side slow-motion of landings; good vs. valgus collapse comparison."
+    },
+    {
+      "id": "ph-006",
+      "name": "Bodyweight Strength Foundations",
+      "category": "physical",
+      "subcategory": "strength",
+      "format": "individual",
+      "age_bands": [
+        "13-14",
+        "15-16"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 25,
+      "intensity": "medium",
+      "equipment": [
+        "mat",
+        "bands optional"
+      ],
+      "description": "Fundamental patterns without load: squat, hinge, lunge, push, pull, brace. Circuit or station format, technique-first.",
+      "coaching_points": [
+        "Full range before adding reps",
+        "Own the bottom position in squats and lunges",
+        "Brace the trunk on every rep"
+      ],
+      "rubric": [
+        {
+          "criterion": "execution",
+          "description": "Movement quality and mechanics are correct"
+        },
+        {
+          "criterion": "effort",
+          "description": "Hits target intensities and completes all prescribed reps"
+        },
+        {
+          "criterion": "consistency",
+          "description": "Maintains quality across sets without technical breakdown"
+        }
+      ],
+      "progression": "Add tempo (slow eccentrics), pauses, then external load at U16+.",
+      "video_note": "One clip per pattern from side and front with key positions freeze-framed."
+    },
+    {
+      "id": "ph-007",
+      "name": "Supervised Resistance Training",
+      "category": "physical",
+      "subcategory": "strength",
+      "format": "individual",
+      "age_bands": [
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 40,
+      "intensity": "high",
+      "equipment": [
+        "gym: barbells/dumbbells/racks"
+      ],
+      "description": "Structured gym programme: trap-bar or goblet squats, RDLs, split squats, presses and rows, with load progression tracked per player.",
+      "coaching_points": [
+        "Qualified supervision mandatory at this age",
+        "Technique standard before any load increase",
+        "Log every session - progression is the programme"
+      ],
+      "rubric": [
+        {
+          "criterion": "execution",
+          "description": "Movement quality and mechanics are correct"
+        },
+        {
+          "criterion": "effort",
+          "description": "Hits target intensities and completes all prescribed reps"
+        },
+        {
+          "criterion": "consistency",
+          "description": "Maintains quality across sets without technical breakdown"
+        }
+      ],
+      "progression": "Individual periodisation aligned to the match calendar.",
+      "video_note": "Technique reference clip per lift with setup and bar-path cues.",
+      "safety_note": "Must be designed and supervised by a qualified S&C coach; follow national youth resistance-training guidelines."
+    },
+    {
+      "id": "ph-008",
+      "name": "Core & Stability (Anti-Rotation, Single-Leg)",
+      "category": "physical",
+      "subcategory": "core_stability",
+      "format": "individual",
+      "age_bands": [
+        "13-14",
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 15,
+      "intensity": "medium",
+      "equipment": [
+        "mat",
+        "bands"
+      ],
+      "description": "Core as force transfer: plank progressions, Pallof presses, dead bugs, side planks, and single-leg balance/reach work.",
+      "coaching_points": [
+        "Anti-extension and anti-rotation before crunching",
+        "Breathe behind the brace",
+        "Quality positions - stop when shape breaks"
+      ],
+      "rubric": [
+        {
+          "criterion": "execution",
+          "description": "Movement quality and mechanics are correct"
+        },
+        {
+          "criterion": "effort",
+          "description": "Hits target intensities and completes all prescribed reps"
+        },
+        {
+          "criterion": "consistency",
+          "description": "Maintains quality across sets without technical breakdown"
+        }
+      ],
+      "progression": "Add perturbations (partner band pulls) and unstable single-leg progressions.",
+      "video_note": "Side and front clips per exercise with common compensation errors shown."
+    },
+    {
+      "id": "ph-009",
+      "name": "Injury-Prevention Block (FIFA 11+, Nordics, Copenhagen)",
+      "category": "physical",
+      "subcategory": "injury_prevention",
+      "format": "individual",
+      "age_bands": [
+        "13-14",
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 20,
+      "intensity": "medium",
+      "equipment": [
+        "mat",
+        "partner"
+      ],
+      "description": "Evidence-based prevention package: FIFA 11+ warm-up structure, Nordic hamstring curls, and Copenhagen adduction, plus ankle/knee control work.",
+      "coaching_points": [
+        "Nordics: control the descent, hips extended",
+        "Copenhagen: straight body line, slow tempo",
+        "Consistency beats intensity - 2-3x weekly all season"
+      ],
+      "rubric": [
+        {
+          "criterion": "execution",
+          "description": "Movement quality and mechanics are correct"
+        },
+        {
+          "criterion": "effort",
+          "description": "Hits target intensities and completes all prescribed reps"
+        },
+        {
+          "criterion": "consistency",
+          "description": "Maintains quality across sets without technical breakdown"
+        }
+      ],
+      "progression": "Progress lever lengths and add load once bodyweight volume is owned.",
+      "video_note": "Technique clip per exercise with regression and progression shown.",
+      "safety_note": "Introduce Nordic and Copenhagen volumes gradually to manage soreness."
+    },
+    {
+      "id": "ph-010",
+      "name": "Conditioning Through Small-Sided Games",
+      "category": "physical",
+      "subcategory": "conditioning",
+      "format": "group",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 25,
+      "intensity": "high",
+      "equipment": [
+        "balls",
+        "cones",
+        "bibs",
+        "goals"
+      ],
+      "description": "Aerobic and high-intensity conditioning delivered via SSG formats (pitch size and numbers set the load). Ball-present fitness preferred over laps.",
+      "coaching_points": [
+        "Pitch dimensions control the intensity - plan it",
+        "Work:rest ratios set the adaptation",
+        "Players compete hard: intensity comes from the game"
+      ],
+      "rubric": [
+        {
+          "criterion": "execution",
+          "description": "Movement quality and mechanics are correct"
+        },
+        {
+          "criterion": "effort",
+          "description": "Hits target intensities and completes all prescribed reps"
+        },
+        {
+          "criterion": "consistency",
+          "description": "Maintains quality across sets without technical breakdown"
+        }
+      ],
+      "progression": "Manipulate format (3v3 large pitch = max intensity; 6v6 small = possession endurance).",
+      "video_note": "Wide fixed clip of one full bout; overlay work:rest timings."
+    },
+    {
+      "id": "ph-011",
+      "name": "Repeated Sprint Ability (RSA)",
+      "category": "physical",
+      "subcategory": "conditioning",
+      "format": "individual",
+      "age_bands": [
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 20,
+      "intensity": "high",
+      "equipment": [
+        "cones",
+        "timing app optional"
+      ],
+      "description": "Repeated maximal or near-maximal sprints (e.g., 6-8 x 30m) on short recovery, straight-line and with a direction change.",
+      "coaching_points": [
+        "Maximal intent on every rep",
+        "Incomplete recovery is the point - but form must hold",
+        "Track total time and fatigue drop-off"
+      ],
+      "rubric": [
+        {
+          "criterion": "execution",
+          "description": "Movement quality and mechanics are correct"
+        },
+        {
+          "criterion": "effort",
+          "description": "Hits target intensities and completes all prescribed reps"
+        },
+        {
+          "criterion": "consistency",
+          "description": "Maintains quality across sets without technical breakdown"
+        }
+      ],
+      "progression": "Add a ball or a decision at the end of each sprint.",
+      "video_note": "Clip of the full set with split times overlaid."
+    },
+    {
+      "id": "ph-012",
+      "name": "Mobility & Dynamic Warm-Up Routines",
+      "category": "physical",
+      "subcategory": "mobility",
+      "format": "individual",
+      "age_bands": [
+        "13-14",
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 15,
+      "intensity": "low",
+      "equipment": [
+        "mat",
+        "bands"
+      ],
+      "description": "Daily mobility block: hip openers, ankle rocks, thoracic rotations, leg swings, and a progressive dynamic warm-up ramp before sessions.",
+      "coaching_points": [
+        "Move with control through full range",
+        "Ramp intensity toward the session's first action",
+        "Own routine - learn to self-manage"
+      ],
+      "rubric": [
+        {
+          "criterion": "execution",
+          "description": "Movement quality and mechanics are correct"
+        },
+        {
+          "criterion": "effort",
+          "description": "Hits target intensities and completes all prescribed reps"
+        },
+        {
+          "criterion": "consistency",
+          "description": "Maintains quality across sets without technical breakdown"
+        }
+      ],
+      "progression": "Personalise the block per player screening results.",
+      "video_note": "Follow-along routine video at real speed."
+    },
+    {
+      "id": "ps-001",
+      "name": "Pre-Match Routine & Visualisation",
+      "category": "psychological",
+      "subcategory": "mental_prep",
+      "format": "individual",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 10,
+      "intensity": "low",
+      "equipment": [
+        "quiet space"
+      ],
+      "description": "Build a repeatable pre-match routine: breathing, visualising 3-5 role-specific success actions, and a one-word focus cue.",
+      "coaching_points": [
+        "Visualise your position's key actions, in first person",
+        "Same routine before every match - it becomes a trigger",
+        "One cue word for when focus slips"
+      ],
+      "rubric": [
+        {
+          "criterion": "engagement",
+          "description": "Completes the exercise fully and honestly"
+        },
+        {
+          "criterion": "application",
+          "description": "Shows evidence of applying the skill in training/matches"
+        },
+        {
+          "criterion": "reflection_quality",
+          "description": "Self-assessment is specific, balanced, and actionable"
+        }
+      ],
+      "progression": "Add in-game reset visualisation after reviewing match footage.",
+      "video_note": "Guided audio-style walkthrough of a full routine."
+    },
+    {
+      "id": "ps-002",
+      "name": "Goal Setting (Process Goals)",
+      "category": "psychological",
+      "subcategory": "goal_setting",
+      "format": "individual",
+      "age_bands": [
+        "13-14",
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 15,
+      "intensity": "low",
+      "equipment": [
+        "worksheet or app"
+      ],
+      "description": "Set one process goal per training block (e.g., 'scan before every reception') tied to the player's development plan, with a weekly self-check.",
+      "coaching_points": [
+        "Process over outcome: actions you control",
+        "Make it observable - a coach could tick it on video",
+        "Review weekly, reset monthly"
+      ],
+      "rubric": [
+        {
+          "criterion": "engagement",
+          "description": "Completes the exercise fully and honestly"
+        },
+        {
+          "criterion": "application",
+          "description": "Shows evidence of applying the skill in training/matches"
+        },
+        {
+          "criterion": "reflection_quality",
+          "description": "Self-assessment is specific, balanced, and actionable"
+        }
+      ],
+      "progression": "Link goals to rubric scores in the system so progress is measurable.",
+      "video_note": "Example worksheet walkthrough with good vs. vague goals."
+    },
+    {
+      "id": "ps-003",
+      "name": "Performance Journaling & Self-Review",
+      "category": "psychological",
+      "subcategory": "reflection",
+      "format": "individual",
+      "age_bands": [
+        "13-14",
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 10,
+      "intensity": "low",
+      "equipment": [
+        "journal or app"
+      ],
+      "description": "Post-session and post-match written review: what went well, what to improve, one action for next time. Feeds directly into the self-feedback score in your system.",
+      "coaching_points": [
+        "Be specific: name the action, not the feeling",
+        "Balance: at least one strength and one improvement",
+        "Compare self-review with coach review - discuss the gaps"
+      ],
+      "rubric": [
+        {
+          "criterion": "engagement",
+          "description": "Completes the exercise fully and honestly"
+        },
+        {
+          "criterion": "application",
+          "description": "Shows evidence of applying the skill in training/matches"
+        },
+        {
+          "criterion": "reflection_quality",
+          "description": "Self-assessment is specific, balanced, and actionable"
+        }
+      ],
+      "progression": "Review monthly trends with the coach; link to individual video clips.",
+      "video_note": "Example journal entries from real scenarios (anonymised)."
+    },
+    {
+      "id": "ps-004",
+      "name": "Sleep, Nutrition & Hydration Foundations",
+      "category": "psychological",
+      "subcategory": "lifestyle",
+      "format": "individual",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 20,
+      "intensity": "low",
+      "equipment": [
+        "educational content"
+      ],
+      "description": "Education module: sleep targets for teen athletes (8-10h), pre/post-training fueling basics, hydration habits, and match-day eating timelines.",
+      "coaching_points": [
+        "Sleep is the number-one recovery tool",
+        "Fuel before, refuel within an hour after",
+        "Build habits, not diets"
+      ],
+      "rubric": [
+        {
+          "criterion": "engagement",
+          "description": "Completes the exercise fully and honestly"
+        },
+        {
+          "criterion": "application",
+          "description": "Shows evidence of applying the skill in training/matches"
+        },
+        {
+          "criterion": "reflection_quality",
+          "description": "Self-assessment is specific, balanced, and actionable"
+        }
+      ],
+      "progression": "Add a weekly habit tracker (sleep hours, hydration) to the player profile.",
+      "video_note": "Short explainer videos per topic with a quiz checkpoint."
+    },
+    {
+      "id": "ps-005",
+      "name": "Reset Routines: Managing Mistakes",
+      "category": "psychological",
+      "subcategory": "resilience",
+      "format": "individual",
+      "age_bands": [
+        "15-16",
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 10,
+      "intensity": "low",
+      "equipment": [
+        "quiet space"
+      ],
+      "description": "Train a 3-second in-game reset after mistakes: exhale, physical trigger (adjust socks/tape), cue word, next-action focus.",
+      "coaching_points": [
+        "Mistakes are information, not identity",
+        "The reset must be rehearsed in training, not invented in matches",
+        "Next action is the only thing you control"
+      ],
+      "rubric": [
+        {
+          "criterion": "engagement",
+          "description": "Completes the exercise fully and honestly"
+        },
+        {
+          "criterion": "application",
+          "description": "Shows evidence of applying the skill in training/matches"
+        },
+        {
+          "criterion": "reflection_quality",
+          "description": "Self-assessment is specific, balanced, and actionable"
+        }
+      ],
+      "progression": "Coach deliberately creates error scenarios in practice to rehearse resets.",
+      "video_note": "Examples of elite players visibly using reset triggers."
+    },
+    {
+      "id": "ps-006",
+      "name": "Communication & Leadership Exercises",
+      "category": "psychological",
+      "subcategory": "leadership",
+      "format": "group",
+      "age_bands": [
+        "17-19"
+      ],
+      "positions": [
+        "ALL"
+      ],
+      "duration_min": 20,
+      "intensity": "medium",
+      "equipment": [
+        "balls",
+        "cones",
+        "bibs"
+      ],
+      "description": "Conditioned games where only designated leaders may talk, rotating the role. Debrief on what information actually helped teammates.",
+      "coaching_points": [
+        "Information beats noise: early, specific, actionable",
+        "Leaders organise others, not just themselves",
+        "Every player leads in their zone - not just the captain"
+      ],
+      "rubric": [
+        {
+          "criterion": "engagement",
+          "description": "Completes the exercise fully and honestly"
+        },
+        {
+          "criterion": "application",
+          "description": "Shows evidence of applying the skill in training/matches"
+        },
+        {
+          "criterion": "reflection_quality",
+          "description": "Self-assessment is specific, balanced, and actionable"
+        }
+      ],
+      "progression": "Assign match-day leadership units (build-up, pressing, set pieces).",
+      "video_note": "Game clips with audio highlighting effective vs. ineffective communication."
+    }
+  ]
+}
