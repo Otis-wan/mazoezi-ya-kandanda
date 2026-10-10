@@ -65,3 +65,6 @@ review-*.txt
 .claude/
 .cursor/
 .devin/
+
+# generated Prisma client
+/src/generated
