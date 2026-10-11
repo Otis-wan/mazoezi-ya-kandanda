@@ -57,11 +57,6 @@ enum DrillCategory {
   PSYCHOLOGICAL
 }
 
-enum StaffRole {
-  COACH
-  TEAM_MANAGER
-}
-
 enum Recurrence {
   ONCE
   DAILY
@@ -80,25 +75,15 @@ enum ScoreSource {
   COACH
   SELF
 }
+
 model Team {
-  id         String    @id @default(uuid())
-  externalId String    @unique
+  id         String   @id @default(uuid())
+  externalId String   @unique
   name       String
   ageBand    AgeBand
   players    Player[]
-  staff      TeamStaff[]
-  createdAt  DateTime  @default(now())
-  updatedAt  DateTime  @updatedAt
-}
-
-model TeamStaff {
-  teamId          String
-  staffExternalId String
-  role            StaffRole
-  team            Team      @relation(fields: [teamId], references: [id], onDelete: Cascade)
-
-  @@id([teamId, staffExternalId])
-  @@index([staffExternalId])
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
 }
 
 model Player {
