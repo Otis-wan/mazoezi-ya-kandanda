@@ -6,14 +6,8 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'node',
-    setupFiles: ['reflect-metadata'],
+    setupFiles: ['reflect-metadata', './test/setup-env.ts'],
     root: './',
     include: ['**/*.e2e-spec.ts'],
-    env: {
-      NODE_ENV: 'test',
-      CORS_ORIGINS: 'https://tms.tisini.africa',
-      TRUST_PROXY: '0',
-      DOCS_ENABLED: 'true',
-    },
   },
 });

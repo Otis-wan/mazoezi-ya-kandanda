@@ -8,8 +8,10 @@ import {
 import { ApiTags } from '@nestjs/swagger';
 import { SkipThrottle } from '@nestjs/throttler';
 import { PrismaService } from '../prisma/prisma.service.js';
+import { Public } from '../auth/decorators.js';
 
 @ApiTags('health')
+@Public()
 @SkipThrottle()
 @Controller({ path: 'health', version: VERSION_NEUTRAL })
 export class HealthController {

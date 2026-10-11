@@ -7,6 +7,7 @@ import {
   Matches,
   Max,
   Min,
+  MinLength,
   validateSync,
 } from 'class-validator';
 
@@ -41,11 +42,30 @@ export class Env {
   @IsBoolean()
   DOCS_ENABLED: boolean = false;
 
+  // All calls come from the main site's server, so this covers every user.
   @Type(() => Number)
   @IsInt()
   @Min(1)
   @Max(10000)
-  RATE_LIMIT_PER_MINUTE: number = 100;
+  RATE_LIMIT_PER_MINUTE: number = 600;
+
+  // Public key (PEM) that checks the tokens the main site signs.
+  @Transform(({ value }) =>
+    typeof value === 'string' ? value.replace(/\\n/g, '\n').trim() : value,
+  )
+  @IsString()
+  @Matches(/^-----BEGIN PUBLIC KEY-----/, {
+    message: 'AUTH_PUBLIC_KEY must be a PEM public key',
+  })
+  AUTH_PUBLIC_KEY!: string;
+
+  @IsString()
+  @MinLength(1)
+  AUTH_ISSUER: string = 'tms-site';
+
+  @IsString()
+  @MinLength(1)
+  AUTH_AUDIENCE: string = 'training-api';
 }
 
 export function validateEnv(config: Record<string, unknown>): Env {
