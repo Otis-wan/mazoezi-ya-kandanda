@@ -7,7 +7,10 @@ import { configureApp } from '../src/app.setup.js';
 
 async function token(claims: { role?: number; teams?: number[] } = {}) {
   const key = await importPKCS8(process.env.AUTH_TEST_PRIVATE_KEY!, 'ES256');
-  return new SignJWT({ role: claims.role ?? 2, teams: claims.teams ?? [10, 11] })
+  return new SignJWT({
+    role: claims.role ?? 2,
+    teams: claims.teams ?? [10, 11],
+  })
     .setProtectedHeader({ alg: 'ES256' })
     .setSubject('42')
     .setIssuer('test-issuer')
@@ -57,7 +60,11 @@ describe('Auth (e2e)', () => {
 
   it('lets a team manager in, with their teams', async () => {
     const res = await get(await token({ role: 2 })).expect(200);
-    expect(res.body).toEqual({ id: '42', role: 'TEAM_MANAGER', teamIds: ['10', '11'] });
+    expect(res.body).toEqual({
+      id: '42',
+      role: 'TEAM_MANAGER',
+      teamIds: ['10', '11'],
+    });
   });
 
   it('lets an admin in', async () => {

@@ -4,6 +4,8 @@ type VerifyKey = Awaited<ReturnType<typeof importSPKI>>;
 
 export interface TokenVerifierOptions {
   publicKeyPem: string;
+  /** A second key, so the main site can swap keys with no downtime. */
+  nextPublicKeyPem?: string;
   issuer: string;
   audience: string;
 }
@@ -20,30 +22,38 @@ const MAX_TEAMS = 500;
 
 export class TokenVerifier {
   constructor(
-    private readonly key: VerifyKey,
+    private readonly keys: VerifyKey[],
     private readonly options: TokenVerifierOptions,
   ) {}
 
   /** Fails at startup if the key is bad, so a wrong setting is never silent. */
   static async create(options: TokenVerifierOptions): Promise<TokenVerifier> {
-    const key = await importSPKI(options.publicKeyPem, 'ES256');
-    return new TokenVerifier(key, options);
+    const pems = [options.publicKeyPem, options.nextPublicKeyPem].filter(
+      (p): p is string => Boolean(p),
+    );
+    const keys = await Promise.all(pems.map((p) => importSPKI(p, 'ES256')));
+    return new TokenVerifier(keys, options);
   }
 
   async verify(token: string): Promise<VerifiedToken> {
-    let payload: JWTPayload;
-    try {
-      ({ payload } = await jwtVerify(token, this.key, {
-        algorithms: ['ES256'],
-        issuer: this.options.issuer,
-        audience: this.options.audience,
-        maxTokenAge: '10m',
-        clockTolerance: 5,
-        requiredClaims: ['sub', 'exp', 'iat'],
-      }));
-    } catch (err) {
-      throw new TokenError(err instanceof Error ? err.name : 'verification failed');
+    let payload: JWTPayload | undefined;
+    let failure = 'verification failed';
+    for (const key of this.keys) {
+      try {
+        ({ payload } = await jwtVerify(token, key, {
+          algorithms: ['ES256'],
+          issuer: this.options.issuer,
+          audience: this.options.audience,
+          maxTokenAge: '10m',
+          clockTolerance: 5,
+          requiredClaims: ['sub', 'exp', 'iat'],
+        }));
+        break;
+      } catch (err) {
+        failure = err instanceof Error ? err.name : failure;
+      }
     }
+    if (!payload) throw new TokenError(failure);
     return parseClaims(payload);
   }
 }

@@ -33,11 +33,33 @@ export class AllExceptionsFilter implements ExceptionFilter {
         message = detail.message ?? exception.message;
         error = detail.error ?? error;
       }
+      if ([401, 403, 429].includes(status)) {
+        const who = (req as { user?: { id: string; role: string } }).user;
+        this.logger.warn(
+          `[${requestId}] ${status} ${req.method} ${req.path} user=${who?.id ?? '-'} role=${who?.role ?? '-'} ip=${req.ip}`,
+        );
+      }
+    } else if (isClientError(exception)) {
+      // Body parser errors: too large, bad JSON, wrong charset. The caller's fault.
+      status = exception.status;
+      error = status === 413 ? 'Payload Too Large' : 'Bad Request';
+      message =
+        status === 413
+          ? 'Request body too large'
+          : 'Request body could not be read';
     } else {
       this.logger.error(
         `[${requestId}] ${req.method} ${req.path}`,
         exception instanceof Error ? exception.stack : String(exception),
       );
+    }
+
+    if (status === 429 && !res.getHeader('Retry-After')) {
+      // The limiter names its header after the limit that fired. Callers expect the plain name.
+      const named = Object.keys(res.getHeaders()).find((h) =>
+        h.startsWith('retry-after-'),
+      );
+      if (named) res.setHeader('Retry-After', String(res.getHeader(named)));
     }
 
     res.status(status).json({
@@ -49,4 +71,9 @@ export class AllExceptionsFilter implements ExceptionFilter {
       timestamp: new Date().toISOString(),
     });
   }
+}
+
+function isClientError(e: unknown): e is { status: number } {
+  const status = (e as { status?: unknown } | null)?.status;
+  return typeof status === 'number' && status >= 400 && status < 500;
 }

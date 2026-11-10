@@ -10,7 +10,11 @@ import { Reflector } from '@nestjs/core';
 import type { AuthedRequest } from './auth-user.js';
 import { IS_PUBLIC_KEY } from './decorators.js';
 import { ROLE_BY_ID } from './roles.js';
-import { TokenError, TokenVerifier, type VerifiedToken } from './token-verifier.js';
+import {
+  TokenError,
+  TokenVerifier,
+  type VerifiedToken,
+} from './token-verifier.js';
 
 const MAX_TOKEN_LENGTH = 4096;
 
@@ -39,7 +43,11 @@ export class AuthGuard implements CanActivate {
       verified = await this.tokens.verify(token);
     } catch (err) {
       if (err instanceof TokenError) {
-        this.logger.warn(`Token rejected: ${err.message}`);
+        const id = (req as { res?: { locals?: { requestId?: string } } }).res
+          ?.locals?.requestId;
+        this.logger.warn(
+          `[${id}] Token rejected (${err.message}) from ${req.ip}`,
+        );
         throw new UnauthorizedException('Invalid or expired token');
       }
       throw err;

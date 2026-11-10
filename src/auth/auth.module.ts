@@ -13,6 +13,7 @@ import { TokenVerifier } from './token-verifier.js';
       useFactory: (config: ConfigService<Env, true>) =>
         TokenVerifier.create({
           publicKeyPem: config.get('AUTH_PUBLIC_KEY', { infer: true }),
+          nextPublicKeyPem: config.get('AUTH_PUBLIC_KEY_NEXT', { infer: true }),
           issuer: config.get('AUTH_ISSUER', { infer: true }),
           audience: config.get('AUTH_AUDIENCE', { infer: true }),
         }),

@@ -2,6 +2,7 @@ import { ValidationPipe, VersioningType } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import type { NestExpressApplication } from '@nestjs/platform-express';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import type { NextFunction, Request, Response } from 'express';
 import helmet from 'helmet';
 import { AllExceptionsFilter } from './common/all-exceptions.filter.js';
 import { requestId } from './common/request-id.js';
@@ -13,6 +14,13 @@ export function configureApp(app: NestExpressApplication): void {
 
   app.set('trust proxy', config.get('TRUST_PROXY', { infer: true }));
   app.use(requestId);
+  // Replies hold player data. No cache, shared or private, may keep them.
+  app.use((_req: Request, res: Response, next: NextFunction) => {
+    res.setHeader('Cache-Control', 'no-store');
+    next();
+  });
+  app.useBodyParser('json', { limit: '100kb' });
+  app.useBodyParser('urlencoded', { limit: '10kb', extended: false });
   // Swagger's page needs inline scripts, so helmet's script rule is off when docs are on.
   app.use(helmet(docsEnabled ? { contentSecurityPolicy: false } : undefined));
 
@@ -44,7 +52,9 @@ export function configureApp(app: NestExpressApplication): void {
       app,
       new DocumentBuilder()
         .setTitle('Training & Development API')
-        .setDescription('Drills, routines, assignments and reviews for youth players.')
+        .setDescription(
+          'Drills, routines, assignments and reviews for youth players.',
+        )
         .setVersion('1')
         .addBearerAuth()
         .build(),

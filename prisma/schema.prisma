@@ -121,6 +121,7 @@ model Drill {
   progression    String?
   videoNote      String?
   safetyNote     String?
+  sampleVideoUrl String?          // https link to a sample clip, set through the API
   routines       RoutineDrill[]
   scores         ScoreEntry[]
 
@@ -162,6 +163,7 @@ model Assignment {
   status          AssignmentStatus @default(PENDING)
   dueAt           DateTime
   recurrence      Recurrence       @default(ONCE)
+  seriesId        String?          // links the repeats of one daily or weekly assignment
   note            String?
   createdAt       DateTime         @default(now())
   updatedAt       DateTime         @updatedAt
@@ -169,6 +171,7 @@ model Assignment {
   review          Review?
   scores          ScoreEntry[]
 
+  @@unique([seriesId, dueAt])
   @@index([playerId, status])
   @@index([status, dueAt])
   @@index([routineId])

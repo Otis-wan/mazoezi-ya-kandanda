@@ -1,4 +1,3 @@
-import { ForbiddenException } from '@nestjs/common';
 import type { AuthUser } from './auth-user.js';
 import { Role } from './roles.js';
 
@@ -10,13 +9,16 @@ export function canAccessTeam(user: AuthUser, teamExternalId: string): boolean {
   return isStaffWide(user) || user.teamIds.includes(teamExternalId);
 }
 
-export function assertTeamAccess(user: AuthUser, teamExternalId: string): void {
-  if (!canAccessTeam(user, teamExternalId)) {
-    throw new ForbiddenException('You do not manage this team');
-  }
-}
-
-/** "all" for staff-wide roles, else the team IDs to filter by. */
-export function visibleTeamIds(user: AuthUser): 'all' | string[] {
-  return isStaffWide(user) ? 'all' : user.teamIds;
+/**
+ * Who may see one player's work: a player sees themselves, a team manager
+ * sees players in their teams, admins see everyone. One rule, used by
+ * assignments and progress alike.
+ */
+export function canViewPlayer(
+  user: AuthUser,
+  player: { externalId: string; team: { externalId: string } | null },
+): boolean {
+  if (user.role === Role.PLAYER) return player.externalId === user.id;
+  if (isStaffWide(user)) return true;
+  return player.team !== null && user.teamIds.includes(player.team.externalId);
 }

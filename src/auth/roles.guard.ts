@@ -18,11 +18,19 @@ export class RolesGuard implements CanActivate {
 
   canActivate(context: ExecutionContext): boolean {
     const targets = [context.getHandler(), context.getClass()];
-    if (this.reflector.getAllAndOverride<boolean | undefined>(IS_PUBLIC_KEY, targets)) {
+    if (
+      this.reflector.getAllAndOverride<boolean | undefined>(
+        IS_PUBLIC_KEY,
+        targets,
+      )
+    ) {
       return true;
     }
 
-    const roles = this.reflector.getAllAndOverride<Role[] | undefined>(ROLES_KEY, targets);
+    const roles = this.reflector.getAllAndOverride<Role[] | undefined>(
+      ROLES_KEY,
+      targets,
+    );
     if (!roles || roles.length === 0) {
       this.logger.warn(
         `No @Roles on ${context.getClass().name}.${context.getHandler().name}; refusing`,

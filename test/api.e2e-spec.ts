@@ -21,17 +21,23 @@ describe('API base (e2e)', () => {
   });
 
   it('answers /health/live', async () => {
-    const res = await request(app.getHttpServer()).get('/health/live').expect(200);
+    const res = await request(app.getHttpServer())
+      .get('/health/live')
+      .expect(200);
     expect(res.body).toEqual({ status: 'ok' });
   });
 
   it('checks the database on /health/ready', async () => {
-    const res = await request(app.getHttpServer()).get('/health/ready').expect(200);
+    const res = await request(app.getHttpServer())
+      .get('/health/ready')
+      .expect(200);
     expect(res.body).toEqual({ status: 'ok', database: 'up' });
   });
 
   it('returns the error format with a request id', async () => {
-    const res = await request(app.getHttpServer()).get('/v1/nothing').expect(404);
+    const res = await request(app.getHttpServer())
+      .get('/v1/nothing')
+      .expect(404);
     expect(res.body).toMatchObject({ statusCode: 404, path: '/v1/nothing' });
     expect(res.body.requestId).toBe(res.headers['x-request-id']);
   });
@@ -47,7 +53,9 @@ describe('API base (e2e)', () => {
     const res = await request(app.getHttpServer())
       .get('/health/live')
       .set('Origin', 'https://tms.tisini.africa');
-    expect(res.headers['access-control-allow-origin']).toBe('https://tms.tisini.africa');
+    expect(res.headers['access-control-allow-origin']).toBe(
+      'https://tms.tisini.africa',
+    );
   });
 
   it('blocks other origins', async () => {
@@ -64,7 +72,9 @@ describe('API base (e2e)', () => {
   });
 
   it('serves the API document', async () => {
-    const res = await request(app.getHttpServer()).get('/docs-json').expect(200);
+    const res = await request(app.getHttpServer())
+      .get('/docs-json')
+      .expect(200);
     expect(res.body.info.title).toBe('Training & Development API');
   });
 });
