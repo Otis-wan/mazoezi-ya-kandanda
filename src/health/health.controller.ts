@@ -30,7 +30,10 @@ export class HealthController {
       await this.prisma.$queryRaw`SELECT 1`;
       return { status: 'ok', database: 'up' };
     } catch (err) {
-      this.logger.error('Database check failed', err instanceof Error ? err.stack : String(err));
+      this.logger.error(
+        'Database check failed',
+        err instanceof Error ? err.stack : String(err),
+      );
       throw new ServiceUnavailableException('Database unavailable');
     }
   }

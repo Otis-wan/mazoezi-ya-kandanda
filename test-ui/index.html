@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Training Test App</title>
+<style>
+  :root{--bg:#f6f7f4;--card:#fff;--ink:#17201a;--mute:#5d6b61;--line:#dde3dc;--accent:#1f7a45;--accent2:#e8f3ec;--warn:#9a4a05;--warnbg:#fff4e0;--bad:#a61b1b;--badbg:#fdeaea}
+  @media (prefers-color-scheme:dark){:root{--bg:#121714;--card:#1b231e;--ink:#eaf0ea;--mute:#9aa9a0;--line:#2c3830;--accent:#4cc27e;--accent2:#1d2e24;--warn:#f5b45c;--warnbg:#33281a;--bad:#ff9b9b;--badbg:#3a1f1f}}
+  *{box-sizing:border-box}
+  [hidden]{display:none !important}
+  body{margin:0;font:16px/1.5 system-ui,sans-serif;background:var(--bg);color:var(--ink)}
+  header{padding:12px 16px;border-bottom:1px solid var(--line);background:var(--card);position:sticky;top:0;z-index:5}
+  h1{font-size:18px;margin:0}
+  h2{font-size:16px;margin:0 0 8px}
+  h3{font-size:13px;margin:14px 0 4px;color:var(--mute);text-transform:uppercase;letter-spacing:.04em}
+  .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  .between{justify-content:space-between}
+  input,select,button,textarea{font:inherit;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:7px 10px}
+  textarea{width:100%;min-height:64px}
+  button{cursor:pointer}
+  button.p{background:var(--accent);color:#fff;border-color:var(--accent)}
+  button.on{background:var(--accent2);border-color:var(--accent);color:var(--accent)}
+  button.sm{padding:3px 8px;font-size:13px}
+  main{max-width:1100px;margin:0 auto;padding:16px}
+  .cols{display:grid;gap:16px;grid-template-columns:1fr}
+  @media(min-width:900px){.cols{grid-template-columns:minmax(0,5fr) minmax(0,6fr)}}
+  .cols>div{display:grid;gap:16px;align-content:start}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;min-width:0}
+  .item{display:block;width:100%;text-align:left;margin:0 0 8px;padding:9px 12px}
+  .item small{color:var(--mute);display:block}
+  .tag{display:inline-block;font-size:12px;padding:1px 8px;border-radius:99px;background:var(--accent2);color:var(--accent);margin:0 4px 4px 0}
+  .warn{background:var(--warnbg);color:var(--warn);border-radius:8px;padding:8px 10px;margin:8px 0;font-size:14px}
+  .err{background:var(--badbg);color:var(--bad)}
+  .vid{aspect-ratio:16/9;background:#0b0f0c;border-radius:10px;display:grid;place-items:center;color:#9aa9a0;text-align:center;padding:12px;overflow:hidden;margin:8px 0}
+  .vid video{width:100%;height:100%}
+  .crit{border-top:1px solid var(--line);padding:10px 0}
+  .crit b{text-transform:capitalize}
+  .lvl{font-size:13px;color:var(--mute);margin:2px 0}
+  .scale{display:flex;gap:6px;margin-top:6px;align-items:center;flex-wrap:wrap}
+  .scale button{width:40px;padding:5px 0}
+  .chip{font-size:13px;padding:2px 8px;border-radius:99px;border:1px solid var(--line);color:var(--mute)}
+  .muted{color:var(--mute)}
+  ul{margin:4px 0 0;padding-left:20px}
+  .tabs{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+  #msg{font-size:14px;color:var(--mute);margin-top:6px;min-height:21px}
+  #msg.bad{color:var(--bad)}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th,td{padding:6px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+  th{color:var(--mute);font-weight:600}
+  .badge{display:inline-block;font-size:12px;padding:1px 8px;border-radius:99px;border:1px solid var(--line)}
+  .s-submitted{border-color:var(--warn);color:var(--warn)}
+  .s-reviewed,.s-in_progress{border-color:var(--accent);color:var(--accent)}
+  .s-cancelled{color:var(--mute);text-decoration:line-through}
+  .late{color:var(--bad);font-weight:600}
+  .meter{position:relative;height:10px;border-radius:5px;background:var(--line);margin:6px 0 10px}
+  .meter .fill{height:100%;border-radius:5px;background:var(--accent)}
+  .meter .tick{position:absolute;top:-3px;width:3px;height:16px;background:var(--ink);border-radius:2px}
+  .legend{font-size:13px;color:var(--mute)}
+  code,pre{font:13px ui-monospace,monospace;background:var(--accent2);border-radius:6px;padding:1px 5px}
+  pre{padding:8px;overflow:auto}
+  label.f{display:block;font-size:13px;color:var(--mute);margin:8px 0 2px}
+  label.f input,label.f select{width:100%}
+  details>summary{cursor:pointer;color:var(--mute);font-size:14px}
+</style>
+</head>
+<body>
+<header>
+  <div class="row between"><h1>Football Training: Test App</h1><span class="muted" id="who-now"></span></div>
+  <details id="conn">
+    <summary>Connection and identity</summary>
+    <div class="row" style="margin-top:8px">
+      <label class="f" style="margin:0">API address<input id="base" size="24"></label>
+      <label class="f" style="margin:0">Act as
+        <select id="who"><option value="admin">Admin</option><option value="coach">Coach (team manager)</option><option value="player">Player</option></select></label>
+      <label class="f" style="margin:0">User ID<input id="sub" size="8"></label>
+      <label class="f" style="margin:0">Team IDs<input id="teams" size="10" placeholder="10,11"></label>
+      <label class="f" style="margin:0">Issuer<input id="iss" size="10"></label>
+      <label class="f" style="margin:0">Audience<input id="aud" size="12"></label>
+    </div>
+    <label class="f">Dev signing key (PKCS8 PEM). Use a throwaway key, never the live one. It stays in this tab only.</label>
+    <textarea id="key" placeholder="-----BEGIN PRIVATE KEY-----"></textarea>
+    <details><summary>How to make a dev key</summary>
+<pre>openssl ecparam -name prime256v1 -genkey -noout -out dev-private.pem
+openssl pkcs8 -topk8 -nocrypt -in dev-private.pem -out dev-private-pkcs8.pem
+openssl ec -in dev-private.pem -pubout -out dev-public.pem</pre>
+      <p class="muted">Paste <code>dev-private-pkcs8.pem</code> above. Put <code>dev-public.pem</code> in <code>AUTH_PUBLIC_KEY</code> in <code>.env</code> (newlines as <code>\n</code>). Add this page's address to <code>CORS_ORIGINS</code>, for example <code>http://localhost:8080</code>. Serve the page with <code>python3 -m http.server 8080 --directory test-ui</code>.</p>
+    </details>
+  </details>
+  <div id="msg">Ready.</div>
+  <div class="tabs" id="tabs">
+    <button data-tab="drills" class="on">Drills</button>
+    <button data-tab="coach">Coach</button>
+    <button data-tab="player">Player</button>
+    <button data-tab="dev">Setup</button>
+  </div>
+</header>
+
+<main>
+<!-- DRILLS -->
+<section id="t-drills" class="tab">
+  <div class="cols">
+    <div>
+      <div class="card">
+        <h2>Find drills</h2>
+        <div class="row" style="margin-bottom:8px">
+          <button id="src-file" class="on">From JSON file</button>
+          <button id="src-api">From API</button>
+          <input type="file" id="file" accept=".json">
+          <button id="load-api" class="p" hidden>Load</button>
+        </div>
+        <div class="row">
+          <select id="age" autocomplete="off"><option value="">Any age</option><option>13-14</option><option>15-16</option><option>17-19</option></select>
+          <select id="pos" autocomplete="off"><option value="">Any position</option><option>GK</option><option>DF</option><option>MF</option><option>FW</option></select>
+          <select id="cat" autocomplete="off"><option value="">Any category</option></select>
+        </div>
+        <input id="q" placeholder="Search" style="width:100%;margin:8px 0">
+        <div id="list"><span class="muted">Load the drill library to start.</span></div>
+      </div>
+      <div class="card">
+        <h2>Routine draft</h2>
+        <div id="plan" class="muted">No drills added.</div>
+      </div>
+    </div>
+    <div><div class="card" id="detail"><span class="muted">Choose a drill.</span></div></div>
+  </div>
+</section>
+
+<!-- COACH -->
+<section id="t-coach" class="tab" hidden>
+  <div class="cols">
+    <div>
+      <div class="card">
+        <div class="row between"><h2>Routines</h2><button id="r-refresh">Refresh</button></div>
+        <div id="routines"><span class="muted">Press Refresh.</span></div>
+      </div>
+      <div class="card">
+        <h2>Assign a routine</h2>
+        <label class="f">Routine<select id="as-routine"></select></label>
+        <label class="f">Player IDs, separated by commas<input id="as-players" placeholder="101,102"></label>
+        <label class="f">Due<input id="as-due" type="datetime-local"></label>
+        <label class="f">Repeat<select id="as-rec"><option value="once">Once</option><option value="daily">Daily</option><option value="weekly">Weekly</option></select></label>
+        <label class="f">Note<input id="as-note" maxlength="1000"></label>
+        <p><button class="p" id="as-go">Assign</button></p>
+        <div class="muted" style="font-size:13px">Repeats need Redis.</div>
+      </div>
+    </div>
+    <div>
+      <div class="card">
+        <h2>Assignments</h2>
+        <div class="row">
+          <select id="af-status"><option value="">Any status</option><option>pending</option><option>in_progress</option><option>submitted</option><option>reviewed</option><option>cancelled</option></select>
+          <label class="row" style="gap:4px"><input type="checkbox" id="af-over"> Overdue</label>
+          <input id="af-team" placeholder="Team ID" size="8">
+          <input id="af-player" placeholder="Player ID" size="8">
+          <button id="af-go" class="p">Load</button>
+        </div>
+        <div id="assignments" style="margin-top:8px"></div>
+      </div>
+      <div class="card" id="a-detail"><span class="muted">Choose an assignment.</span></div>
+      <div class="card">
+        <h2>Team progress</h2>
+        <div class="row"><input id="tp-team" placeholder="Team ID" size="8"><button id="tp-go" class="p">Load</button></div>
+        <div id="team-progress" style="margin-top:8px"></div>
+        <div id="team-player"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLAYER -->
+<section id="t-player" class="tab" hidden>
+  <div class="cols">
+    <div>
+      <div class="card">
+        <h2>My work</h2>
+        <div class="row">
+          <select id="pf-status"><option value="">Any status</option><option>pending</option><option>in_progress</option><option>submitted</option><option>reviewed</option></select>
+          <button id="pf-go" class="p">Load</button>
+        </div>
+        <div id="mine" style="margin-top:8px"><span class="muted">Set "Act as" to Player, then press Load.</span></div>
+      </div>
+      <div class="card">
+        <h2>My progress</h2>
+        <div class="row">
+          <select id="pp-int"><option value="week">By week</option><option value="month">By month</option></select>
+          <button id="pp-go" class="p">Load</button>
+        </div>
+        <div id="my-progress" style="margin-top:8px"></div>
+      </div>
+    </div>
+    <div><div class="card" id="p-detail"><span class="muted">Choose an assignment.</span></div></div>
+  </div>
+</section>
+
+<!-- SETUP -->
+<section id="t-dev" class="tab" hidden>
+  <div class="cols">
+    <div>
+      <div class="card">
+        <h2>Check the connection</h2>
+        <div class="row">
+          <button id="d-health">API health</button>
+          <button id="d-me">Who am I (staff only)</button>
+          <button id="d-token">Show a token</button>
+        </div>
+        <pre id="d-out" style="margin-top:8px" hidden></pre>
+      </div>
+      <div class="card">
+        <h2>Sample data</h2>
+        <p class="muted">Makes team 10 (age 15-16) and players 101 to 104, as Admin. Safe to press twice.</p>
+        <button class="p" id="d-seed">Create sample team and players</button>
+        <div id="d-known" style="margin-top:8px"></div>
+      </div>
+    </div>
+    <div>
+      <div class="card">
+        <h2>Test route</h2>
+        <ol>
+          <li>Create the sample data.</li>
+          <li>Drills tab: load from the API, add drills, save a routine.</li>
+          <li>Coach: assign it to <code>101,102</code>.</li>
+          <li>Player (ID 101): start it, score yourself, hand it in.</li>
+          <li>Coach: open it, score, save the review.</li>
+          <li>Check progress on both sides.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<script>
+'use strict';
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const label = s => esc(String(s ?? '').replace(/_/g, ' '));
+const fmt = d => d ? new Date(d).toLocaleString([], {dateStyle:'medium', timeStyle:'short'}) : '';
+const store = { get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch{return d}}, set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch{}} };
+const sess = { get(k){try{return sessionStorage.getItem(k)||''}catch{return ''}}, set(k,v){try{sessionStorage.setItem(k,v)}catch{}} };
+
+function say(t, bad){ const m=$('#msg'); m.textContent=t; m.className=bad?'bad':''; }
+async function act(fn){ try{ say('Working…'); await fn(); if ($('#msg').textContent==='Working…') say('Done.'); }catch(e){ say(e.message||String(e), true); } }
+
+/* ---------- settings and identity ---------- */
+const ROLE = {admin:1, coach:2, player:5};
+const PRESET = {admin:{sub:'1',teams:''}, coach:{sub:'900',teams:'10'}, player:{sub:'101',teams:''}};
+const cfg = store.get('cfg', {base:'http://localhost:3000', iss:'tms-site', aud:'training-api', who:'coach', sub:'900', teams:'10'});
+for (const k of ['base','iss','aud','who','sub','teams']) $('#'+k).value = cfg[k] ?? '';
+$('#key').value = sess.get('devkey');
+function saveCfg(){ for (const k of ['base','iss','aud','who','sub','teams']) cfg[k]=$('#'+k).value; store.set('cfg',cfg); sess.set('devkey',$('#key').value); $('#who-now').textContent = 'Acting as '+$('#who').value+' '+$('#sub').value; }
+['base','iss','aud','who','sub','teams','key'].forEach(k=>$('#'+k).addEventListener('input',saveCfg));
+$('#who').addEventListener('change',()=>{ const p=PRESET[$('#who').value]; $('#sub').value=p.sub; $('#teams').value=p.teams; saveCfg(); });
+saveCfg();
+if (!$('#key').value) $('#conn').open = true;
+
+const ADMIN = {who:'admin', sub:'1', role:1, teams:[]};
+function identity(){
+  const who=$('#who').value;
+  return {who, sub:$('#sub').value.trim(), role:ROLE[who], teams:$('#teams').value.split(',').map(s=>parseInt(s,10)).filter(n=>n>0)};
+}
+
+/* ---------- sign tokens in the browser (ES256) ---------- */
+const b64u = buf => btoa(String.fromCharCode(...new Uint8Array(buf))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
+const enc = o => b64u(new TextEncoder().encode(JSON.stringify(o)));
+let keyCache = {pem:'', key:null};
+async function signingKey(){
+  const pem = $('#key').value.trim();
+  if (!pem) throw new Error('Paste a dev signing key first (open "Connection and identity").');
+  if (!pem.includes('BEGIN PRIVATE KEY')) throw new Error('The key must be PKCS8, starting "BEGIN PRIVATE KEY". See "How to make a dev key".');
+  if (!window.crypto || !crypto.subtle) throw new Error('This page needs http://localhost or https. Serve it with python3 -m http.server.');
+  if (keyCache.pem !== pem) {
+    const der = Uint8Array.from(atob(pem.replace(/-----[^-]+-----/g,'').replace(/\s+/g,'')), c=>c.charCodeAt(0));
+    keyCache = {pem, key: await crypto.subtle.importKey('pkcs8', der, {name:'ECDSA', namedCurve:'P-256'}, false, ['sign'])};
+  }
+  return keyCache.key;
+}
+async function mint(who){
+  const key = await signingKey();
+  const now = Math.floor(Date.now()/1000);
+  const data = enc({alg:'ES256', typ:'JWT'})+'.'+enc({iss:$('#iss').value.trim(), aud:$('#aud').value.trim(), sub:who.sub, role:who.role, teams:who.teams, iat:now, exp:now+300});
+  const sig = await crypto.subtle.sign({name:'ECDSA', hash:'SHA-256'}, key, new TextEncoder().encode(data));
+  return data+'.'+b64u(sig);
+}
+const baseUrl = () => $('#base').value.trim().replace(/\/$/,'');
+async function call(method, path, body, who = identity()){
+  const token = await mint(who);
+  let r;
+  try{
+    r = await fetch(baseUrl()+'/v1'+path, {method, headers:{Authorization:'Bearer '+token, ...(body!==undefined?{'Content-Type':'application/json'}:{})}, body: body!==undefined?JSON.stringify(body):undefined});
+  }catch{
+    throw new Error('Cannot reach '+baseUrl()+'. Check that the API runs and that CORS_ORIGINS lists '+location.origin+(location.protocol==='file:'?' (open this page over http, not as a file)':'')+'.');
+  }
+  if (r.status===204) return null;
+  let j=null; try{ j=await r.json(); }catch{}
+  if (!r.ok){ const m=j&&j.message; throw new Error(r.status+' '+(Array.isArray(m)?m.join('; '):(m||r.statusText))); }
+  return j;
+}
+async function allPages(path){
+  const sep = path.includes('?')?'&':'?';
+  let rows=[], page=1, total=Infinity;
+  while (rows.length<total && page<=20){
+    const j = await call('GET', `${path}${sep}limit=100&page=${page}`);
+    rows = rows.concat(j.data||[]); total = j.meta?.total ?? rows.length; page++;
+    if (!(j.data||[]).length) break;
+  }
+  return rows;
+}
+
+/* ---------- tabs ---------- */
+function showTab(n){
+  $$('.tab').forEach(s=>s.hidden = s.id!=='t-'+n);
+  $$('#tabs button').forEach(b=>b.classList.toggle('on', b.dataset.tab===n));
+}
+$('#tabs').onclick = e => { if (e.target.dataset.tab) showTab(e.target.dataset.tab); };
+
+/* ---------- drills ---------- */
+let drills=[], plan=[], src='file';
+const norm = d => ({
+  id:d.id, name:d.name, category:d.category, format:d.format,
+  ageBands:d.ageBands||d.age_bands||[], positions:d.positions||[],
+  duration:d.durationMin??d.duration_min, intensity:d.intensity,
+  equipment:d.equipment||[], description:d.description||'',
+  points:d.coachingPoints||d.coaching_points||[], rubric:d.rubric||null,
+  progression:d.progression||'', videoNote:d.videoNote||d.video_note||'',
+  safety:d.safetyNote||d.safety_note||'', videoUrl:d.sampleVideoUrl||d.sample_video_url||'',
+  full: d.rubric!==undefined
+});
+function setSrc(s){ src=s; $('#src-file').classList.toggle('on',s==='file'); $('#src-api').classList.toggle('on',s==='api'); $('#file').hidden=s!=='file'; $('#load-api').hidden=s!=='api'; }
+$('#src-file').onclick=()=>setSrc('file'); $('#src-api').onclick=()=>setSrc('api'); setSrc('file');
+$('#file').onchange = e => act(async()=>{ const j=JSON.parse(await e.target.files[0].text()); initDrills((j.drills||j).map(norm)); say('Loaded '+drills.length+' drills from the file.'); });
+$('#load-api').onclick = () => act(async()=>{ initDrills((await allPages('/drills')).map(norm)); });
+function initDrills(rows){
+  drills=rows;
+  const cats=[...new Set(rows.map(d=>d.category))].sort();
+  $('#cat').innerHTML='<option value="">Any category</option>'+cats.map(c=>`<option value="${esc(c)}">${label(c)}</option>`).join('');
+  renderList();
+}
+['age','pos','cat','q'].forEach(id=>$('#'+id).addEventListener('input',renderList));
+function renderList(){
+  const a=$('#age').value, p=$('#pos').value, c=$('#cat').value, q=$('#q').value.toLowerCase();
+  const rows=drills.filter(d=>(!a||d.ageBands.includes(a))&&(!p||d.positions.includes(p)||d.positions.includes('ALL'))&&(!c||d.category===c)&&(!q||(d.name+' '+d.description).toLowerCase().includes(q)));
+  $('#list').innerHTML = rows.length ? rows.map(d=>`<button class="item" data-id="${esc(d.id)}"><b>${esc(d.name)}</b><small>${label(d.category)} · ${esc(d.duration??'?')} min · ${esc(d.ageBands.join(', '))}</small></button>`).join('') : '<span class="muted">No drills match.</span>';
+}
+$('#list').onclick = e => { const b=e.target.closest('[data-id]'); if (b) act(()=>openDrill(b.dataset.id)); };
+
+function levels(desc){
+  const out=[];
+  for (const n of [1,3,5]){ const m=String(desc||'').match(new RegExp('(?:^|; )'+n+' = (.*?)(?=; [135] = |$)')); if (m) out.push({n, text:m[1]}); }
+  return out;
+}
+function levelsHtml(r){ const lv=levels(r.description); return lv.length ? lv.map(l=>`<div class="lvl"><b>${l.n}</b> ${esc(l.text)}</div>`).join('') : `<div class="lvl">${esc(r.description)}</div>`; }
+function videoHtml(d){
+  return `<div class="vid">${d.videoUrl?`<video controls playsinline src="${esc(d.videoUrl)}"></video>`:`<div><b>Sample video not added yet</b><br><small>The clip should show: ${esc(d.videoNote||'—')}</small></div>`}</div>`;
+}
+function drillBody(d){
+  return `${videoHtml(d)}
+    ${d.safety?`<div class="warn"><b>Safety:</b> ${esc(d.safety)}</div>`:''}
+    <h3>What to do</h3><p>${esc(d.description)}</p>
+    <h3>Coaching points</h3><ul>${d.points.map(p=>`<li>${esc(p)}</li>`).join('')}</ul>
+    <h3>Equipment</h3><p>${esc(d.equipment.join(', '))}</p>
+    <h3>Make it harder</h3><p>${esc(d.progression)}</p>`;
+}
+async function openDrill(id){
+  let d = drills.find(x=>x.id===id);
+  if (src==='api' && !d.full){ Object.assign(d, norm(await call('GET','/drills/'+encodeURIComponent(id)))); }
+  const tags=[d.format, d.intensity+' intensity', (d.duration??'?')+' min', ...d.ageBands, ...d.positions];
+  $('#detail').innerHTML = `
+    <h2>${esc(d.name)}</h2>
+    <div>${tags.map(t=>`<span class="tag">${label(t)}</span>`).join('')}</div>
+    ${drillBody(d)}
+    <h3>Rubric</h3>${(d.rubric||[]).map(r=>`<div class="crit"><b>${label(r.criterion)}</b>${levelsHtml(r)}</div>`).join('')||'<span class="muted">No rubric loaded.</span>'}
+    <h3>Try a sample clip</h3>
+    <div class="row"><input type="file" accept="video/*" id="clip-file"></div>
+    <div class="row" style="margin-top:6px"><input id="clip-url" placeholder="https://… link to a clip" style="flex:1;min-width:180px"><button id="clip-save" ${src==='api'?'':'disabled'} title="Admin only. Needs the sample-video route.">Save link to API</button></div>
+    <p><button class="p" id="add">Add to routine draft</button></p>`;
+  $('#add').onclick=()=>{ plan.push(d); renderPlan(); say('Added '+d.id+'.'); };
+  $('#clip-file').onchange=e=>{ const f=e.target.files[0]; if(f){ d.videoUrl=URL.createObjectURL(f); $('#detail .vid').outerHTML=videoHtml(d); say('Showing the clip on this page only.'); } };
+  $('#clip-save').onclick=()=>act(async()=>{ const url=$('#clip-url').value.trim(); await call('PUT','/drills/'+encodeURIComponent(d.id)+'/sample-video',{url: url||null}, ADMIN); d.videoUrl=url; $('#detail .vid').outerHTML=videoHtml(d); });
+}
+
+/* routine draft */
+function renderPlan(){
+  if (!plan.length){ $('#plan').innerHTML='<span class="muted">No drills added.</span>'; return; }
+  const total=plan.reduce((a,d)=>a+(d.duration||0),0);
+  const heads=plan.filter(d=>d.category==='heading').length;
+  $('#plan').innerHTML = plan.map((d,i)=>`<div class="row between" style="margin-bottom:4px"><span>${i+1}. ${esc(d.name)} <small class="muted">${esc(d.duration??'?')} min</small></span><span class="row" style="gap:4px"><button class="sm" data-up="${i}" aria-label="Move up">↑</button><button class="sm" data-down="${i}" aria-label="Move down">↓</button><button class="sm" data-rm="${i}">Remove</button></span></div>`).join('')
+    + `<p><b>Total: ${total} min</b></p>`
+    + (heads>1?`<div class="warn">This routine holds ${heads} heading drills. The FA allows one heading session a week, with a header limit per player. Count headers across all of them.</div>`:'')
+    + `<label class="f">Routine name<input id="plan-name" maxlength="120"></label><p><button class="p" id="plan-save">Save routine to API</button> <button id="plan-clear">Clear</button></p>`;
+}
+$('#plan').onclick = e => {
+  const t=e.target, n=k=>+t.dataset[k];
+  if (t.dataset.rm!==undefined) plan.splice(n('rm'),1);
+  else if (t.dataset.up!==undefined && n('up')>0) [plan[n('up')-1],plan[n('up')]]=[plan[n('up')],plan[n('up')-1]];
+  else if (t.dataset.down!==undefined && n('down')<plan.length-1) [plan[n('down')+1],plan[n('down')]]=[plan[n('down')],plan[n('down')+1]];
+  else if (t.id==='plan-clear') plan=[];
+  else if (t.id==='plan-save') return act(async()=>{
+    const name=$('#plan-name').value.trim(); if(!name) throw new Error('Give the routine a name.');
+    const r=await call('POST','/routines',{name, drillIds:plan.map(d=>d.id)});
+    plan=[]; renderPlan(); await loadRoutines();
+    say('Saved "'+r.name+'" ('+r.drillCount+' drills, '+r.totalDurationMin+' min).'+(r.warnings.length?' Warning: '+r.warnings[0].message:''), !!r.warnings.length);
+  });
+  else return;
+  renderPlan();
+};
+
+/* ---------- coach: routines ---------- */
+async function loadRoutines(){
+  const rows = await allPages('/routines');
+  $('#routines').innerHTML = rows.length ? rows.map(r=>`<div class="crit"><b>${esc(r.name)}</b> <span class="muted">${r.drillCount} drills · ${r.totalDurationMin} min</span>
+      ${r.warnings.map(w=>`<div class="warn">${esc(w.message)}</div>`).join('')}
+      <div class="row" style="margin-top:4px"><button class="sm" data-use="${esc(r.id)}">Use</button><button class="sm" data-archive="${esc(r.id)}">Archive</button></div></div>`).join('') : '<span class="muted">No routines yet.</span>';
+  $('#as-routine').innerHTML = rows.map(r=>`<option value="${esc(r.id)}">${esc(r.name)}</option>`).join('');
+}
+$('#r-refresh').onclick=()=>act(loadRoutines);
+$('#routines').onclick=e=>{
+  const u=e.target.dataset.use, a=e.target.dataset.archive;
+  if (u){ $('#as-routine').value=u; say('Routine chosen.'); }
+  if (a) act(async()=>{ await call('PATCH','/routines/'+a,{isArchived:true}); await loadRoutines(); });
+};
+
+/* coach: assign */
+(function(){ const d=new Date(Date.now()+864e5); d.setHours(18,0,0,0); const p=n=>String(n).padStart(2,'0'); $('#as-due').value=`${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())}T${p(d.getHours())}:${p(d.getMinutes())}`; })();
+$('#as-go').onclick=()=>act(async()=>{
+  const ids=$('#as-players').value.split(',').map(s=>s.trim()).filter(Boolean);
+  if(!$('#as-routine').value) throw new Error('Pick a routine. Press Refresh first.');
+  if(!ids.length) throw new Error('Enter at least one player ID.');
+  if(!$('#as-due').value) throw new Error('Pick a due date.');
+  const body={routineId:$('#as-routine').value, playerExternalIds:ids, dueAt:new Date($('#as-due').value).toISOString(), recurrence:$('#as-rec').value};
+  const note=$('#as-note').value.trim(); if(note) body.note=note;
+  const r=await call('POST','/assignments',body);
+  await loadAssignments(); say('Assigned to '+r.data.length+' player(s).');
+});
+
+/* coach: assignment list */
+const rowsHtml = (rows, who) => rows.length ? `<table><thead><tr><th>${who==='coach'?'Player':'Routine'}</th><th>Status</th><th>Due</th></tr></thead><tbody>${rows.map(a=>`<tr data-open="${esc(a.id)}" style="cursor:pointer"><td>${esc(who==='coach'?a.player.firstName+' '+a.player.lastName:a.routine.name)}<div class="muted">${who==='coach'?esc(a.routine.name):esc(a.routine.drillCount+' drills · '+a.routine.totalDurationMin+' min')}</div></td><td><span class="badge s-${esc(a.status)}">${label(a.status)}</span></td><td>${fmt(a.dueAt)}${a.isOverdue?' <span class="late">late</span>':''}</td></tr>`).join('')}</tbody></table>` : '<span class="muted">Nothing here.</span>';
+async function loadAssignments(){
+  const q=new URLSearchParams();
+  if($('#af-status').value) q.set('status',$('#af-status').value);
+  if($('#af-over').checked) q.set('overdue','true');
+  if($('#af-team').value.trim()) q.set('teamExternalId',$('#af-team').value.trim());
+  if($('#af-player').value.trim()) q.set('playerExternalId',$('#af-player').value.trim());
+  const rows=await allPages('/assignments'+(q.toString()?'?'+q:''));
+  $('#assignments').innerHTML=rowsHtml(rows,'coach');
+}
+$('#af-go').onclick=()=>act(loadAssignments);
+$('#assignments').onclick=e=>{ const r=e.target.closest('[data-open]'); if(r) act(async()=>showAssignment(await call('GET','/assignments/'+r.dataset.open),'coach','a-detail')); };
+
+/* ---------- one assignment, for coach or player ---------- */
+const views={};
+function showAssignment(a, mode, tid){
+  const v = views[tid] = {a, mode, draft:{}};
+  for (const s of a.scores){ const val = mode==='player'?s.self:s.coach; if (val!=null) v.draft[s.drillId+'|'+s.criterion]=val; }
+  drawAssignment(tid);
+}
+function drawAssignment(tid){
+  const {a, mode, draft} = views[tid];
+  const editable = mode==='player' ? ['pending','in_progress','submitted'].includes(a.status) : ['submitted','reviewed'].includes(a.status);
+  const scoreOf = (d,c) => a.scores.find(s=>s.drillId===d && s.criterion===c) || {};
+  const drillsHtml = a.drills.map(({order,drill})=>{
+    const d = norm(drill);
+    const crit = (d.rubric||[]).map(r=>{
+      const key=d.id+'|'+r.criterion, mine=draft[key], s=scoreOf(d.id,r.criterion);
+      const other = mode==='player' ? (s.coach!=null?`<span class="chip">Coach ${s.coach}</span>`:'') : (s.self!=null?`<span class="chip">Player ${s.self}</span>`:'<span class="chip">Player: no score</span>');
+      return `<div class="crit"><b>${label(r.criterion)}</b> ${other}${levelsHtml(r)}
+        <div class="scale" data-key="${esc(key)}">${[1,2,3,4,5].map(n=>`<button class="${mine===n?'on':''}" data-n="${n}" ${editable?'':'disabled'}>${n}</button>`).join('')}</div></div>`;
+    }).join('');
+    return `<div style="margin-top:14px"><h3 style="margin-top:0">Drill ${order}</h3><b>${esc(d.name)}</b> <span class="muted">${esc(d.duration)} min</span>
+      <details><summary>Show the drill</summary>${drillBody(d)}</details>${crit}</div>`;
+  }).join('');
+  const who = a.player ? `${a.player.firstName} ${a.player.lastName}` : '';
+  const fbOld = mode==='player' ? a.submission?.selfFeedback : a.review?.feedback;
+  const other = mode==='player' ? (a.review?.feedback?`<div class="warn"><b>Coach says:</b> ${esc(a.review.feedback)}</div>`:'') : (a.submission?.selfFeedback?`<div class="warn"><b>Player says:</b> ${esc(a.submission.selfFeedback)}</div>`:'');
+  let buttons='';
+  if (mode==='player'){
+    if (a.status==='pending') buttons+='<button data-act="start">Start</button> ';
+    if (editable) buttons+=`<button class="p" data-act="submit">${a.status==='submitted'?'Hand in again':'Hand in'}</button>`;
+  } else {
+    if (editable) buttons+='<button class="p" data-act="review">Save review</button> ';
+    if (['pending','in_progress','submitted'].includes(a.status)) buttons+='<button data-act="cancel">Cancel assignment</button>';
+  }
+  const waiting = mode==='coach' && !editable && a.status!=='cancelled' ? '<div class="warn">The player has not handed this in yet.</div>' : '';
+  $('#'+tid).innerHTML = `<div class="row between"><h2 style="margin:0">${esc(a.routine.name)}</h2><span class="badge s-${esc(a.status)}">${label(a.status)}</span></div>
+    <div class="muted">${mode==='coach'?esc(who)+' · ':''}Due ${fmt(a.dueAt)}${a.isOverdue?' <span class="late">late</span>':''}${a.recurrence!=='once'?' · repeats '+esc(a.recurrence):''}</div>
+    ${a.note?`<p>${esc(a.note)}</p>`:''}${waiting}${other}${drillsHtml}
+    <h3>${mode==='player'?'Your feedback':'Coach feedback'}</h3><textarea maxlength="2000" ${editable?'':'disabled'}>${esc(fbOld||'')}</textarea>
+    <p>${buttons}</p>`;
+}
+for (const tid of ['a-detail','p-detail']){
+  $('#'+tid).onclick = e => {
+    const v=views[tid]; if(!v) return;
+    const sc=e.target.closest('.scale');
+    if (sc && e.target.dataset.n){
+      const n=+e.target.dataset.n, k=sc.dataset.key;
+      if (v.draft[k]===n) delete v.draft[k]; else v.draft[k]=n;
+      sc.querySelectorAll('button').forEach(b=>b.classList.toggle('on', +b.dataset.n===v.draft[k]));
+      return;
+    }
+    const what=e.target.dataset.act; if(!what) return;
+    const id=v.a.id, text=$('#'+tid+' textarea').value.trim();
+    const scores=Object.entries(v.draft).map(([k,score])=>{const i=k.indexOf('|'); return {drillId:k.slice(0,i), criterion:k.slice(i+1), score}});
+    act(async()=>{
+      let a;
+      if (what==='start') a=await call('POST',`/assignments/${id}/start`);
+      if (what==='submit') a=await call('PUT',`/assignments/${id}/submission`,{scores, ...(text?{selfFeedback:text}:{})});
+      if (what==='review') a=await call('PUT',`/assignments/${id}/review`,{scores, ...(text?{feedback:text}:{})});
+      if (what==='cancel') a=await call('POST',`/assignments/${id}/cancel`);
+      showAssignment(a, v.mode, tid);
+      if (v.mode==='player') await loadMine(); else await loadAssignments();
+    });
+  };
+}
+
+/* ---------- player ---------- */
+async function loadMine(){
+  const rows=await allPages('/assignments/mine'+($('#pf-status').value?'?status='+$('#pf-status').value:''));
+  $('#mine').innerHTML=rowsHtml(rows,'player');
+}
+$('#pf-go').onclick=()=>act(loadMine);
+$('#mine').onclick=e=>{ const r=e.target.closest('[data-open]'); if(r) act(async()=>showAssignment(await call('GET','/assignments/'+r.dataset.open),'player','p-detail')); };
+$('#pp-go').onclick=()=>act(async()=>{
+  const id=identity().sub;
+  $('#my-progress').innerHTML=progressHtml(await call('GET',`/players/${encodeURIComponent(id)}/progress?interval=${$('#pp-int').value}`));
+});
+
+/* ---------- progress ---------- */
+const num = v => v==null ? '–' : (+v).toFixed(1);
+const meter = (coach,self) => `<div class="meter" role="img" aria-label="Coach ${num(coach)} of 5, player ${num(self)} of 5">${coach!=null?`<div class="fill" style="width:${coach/5*100}%"></div>`:''}${self!=null?`<span class="tick" style="left:calc(${self/5*100}% - 1px)"></span>`:''}</div>`;
+function progressHtml(p){
+  const w=p.assignments, o=p.overall;
+  const head=`<div><b>${esc(p.player.firstName)} ${esc(p.player.lastName)}</b></div>
+    <div class="muted">${w.total} assigned · ${w.reviewed} reviewed · ${w.submitted} waiting for review · ${w.pending+w.inProgress} open · ${w.overdue?`<span class="late">${w.overdue} late</span>`:'0 late'}${w.completionRate!=null?` · ${Math.round(w.completionRate*100)}% handed in`:''}</div>
+    <h3>Overall</h3>${meter(o.coachAverage,o.selfAverage)}
+    <div class="legend">Bar: coach average ${num(o.coachAverage)} (${o.coachCount} scores). Black mark: player average ${num(o.selfAverage)} (${o.selfCount}).${o.selfGap!=null?' The player rates themself '+(o.selfGap>0?o.selfGap+' higher':o.selfGap<0?(-o.selfGap)+' lower':'the same')+(o.selfGap?' than the coach does.':' as the coach.'):''}</div>`;
+  if (!p.categories.length) return head+'<p class="muted">No scores in this period.</p>'+(p.truncated?'<div class="warn">Too many scores. Only the first 20,000 count.</div>':'');
+  return head+p.categories.map(c=>`<div class="crit"><div class="row between"><b>${label(c.category)}</b><span class="muted">coach ${num(c.coachAverage)} · player ${num(c.selfAverage)}</span></div>
+      ${meter(c.coachAverage,c.selfAverage)}
+      <div class="legend">Weakest first</div>
+      <table><tbody>${c.criteria.slice(0,4).map(x=>`<tr><td>${label(x.criterion)}</td><td>coach ${num(x.coachAverage)}</td><td>player ${num(x.selfAverage)}</td></tr>`).join('')}</tbody></table>
+      <details><summary>By ${esc(p.period.interval||'period')}</summary><table><tbody>${c.trend.map(t=>`<tr><td>${esc(t.period)}</td><td>coach ${num(t.coachAverage)}</td><td>player ${num(t.selfAverage)}</td></tr>`).join('')}</tbody></table></details></div>`).join('')
+    + (p.truncated?'<div class="warn">Too many scores. Only the first 20,000 count.</div>':'');
+}
+$('#tp-go').onclick=()=>act(async()=>{
+  const t=await call('GET','/teams/'+encodeURIComponent($('#tp-team').value.trim())+'/progress');
+  $('#team-player').innerHTML='';
+  $('#team-progress').innerHTML = `<b>${esc(t.team.name)}</b> <span class="muted">${esc(t.team.ageBand)}</span><table><thead><tr><th>Player</th><th>Work</th><th>Handed in</th><th>Coach</th><th>Player</th></tr></thead><tbody>${t.players.map(p=>`<tr data-pl="${esc(p.externalId)}" style="cursor:pointer"><td>${esc(p.firstName)} ${esc(p.lastName)}</td><td>${p.assignments.reviewed}/${p.assignments.total}${p.assignments.overdue?` <span class="late">${p.assignments.overdue} late</span>`:''}</td><td>${p.assignments.completionRate!=null?Math.round(p.assignments.completionRate*100)+'%':'–'}</td><td>${num(p.coachAverage)}</td><td>${num(p.selfAverage)}</td></tr>`).join('')}</tbody></table><div class="muted">Click a player for the detail.</div>`;
+});
+$('#team-progress').onclick=e=>{ const r=e.target.closest('[data-pl]'); if(r) act(async()=>{ $('#team-player').innerHTML='<h3>Player detail</h3>'+progressHtml(await call('GET','/players/'+encodeURIComponent(r.dataset.pl)+'/progress')); }); };
+
+/* ---------- setup ---------- */
+const out = t => { const o=$('#d-out'); o.hidden=false; o.textContent=t; };
+$('#d-health').onclick=()=>act(async()=>{ let r; try{ r=await fetch(baseUrl()+'/health/ready'); }catch{ throw new Error('Cannot reach '+baseUrl()+'. Is the API running? Does CORS_ORIGINS list '+location.origin+'?'); } out(r.status+' '+(await r.text())); });
+$('#d-me').onclick=()=>act(async()=>out(JSON.stringify(await call('GET','/me'),null,2)));
+$('#d-token').onclick=()=>act(async()=>out(await mint(identity())));
+function knownPlayers(){ return store.get('players',[]); }
+function drawKnown(){ const k=knownPlayers(); $('#d-known').innerHTML = k.length ? '<table><tbody>'+k.map(p=>`<tr><td>${esc(p.id)}</td><td>${esc(p.name)}</td><td>${esc(p.position)}</td></tr>`).join('')+'</tbody></table>' : ''; if(k.length && !$('#as-players').value) $('#as-players').value=k.slice(0,2).map(p=>p.id).join(','); }
+$('#d-seed').onclick=()=>act(async()=>{
+  await call('PUT','/teams/10',{name:'U15 Test Squad', ageBand:'15-16'}, ADMIN);
+  const people=[['101','Amani','Otieno','GK',2011],['102','Baraka','Mwangi','DF',2011],['103','Chege','Kamau','MF',2010],['104','Dawit','Bekele','FW',2010]];
+  for (const [id,f,l,pos,y] of people) await call('PUT','/players/'+id,{firstName:f,lastName:l,birthYear:y,position:pos,teamExternalId:'10'}, ADMIN);
+  store.set('players', people.map(([id,f,l,pos])=>({id,name:f+' '+l,position:pos}))); drawKnown();
+  say('Team 10 and players 101 to 104 are ready.');
+});
+drawKnown();
+</script>
+</body>
+</html>

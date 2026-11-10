@@ -61,6 +61,8 @@ report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 # review dumps and tool copies
 project-review*.txt
 review-*.txt
+claude-bundle.txt
+*.zip
 .agents/
 .claude/
 .cursor/
@@ -68,3 +70,10 @@ review-*.txt
 
 # generated Prisma client
 /src/generated
+
+# signing keys and secrets: never commit these
+dev-keys/
+*.pem
+*.key
+.env.*
+!.env.example

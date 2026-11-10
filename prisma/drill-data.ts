@@ -1,5 +1,3 @@
-import { readFileSync } from 'node:fs';
-import { fileURLToPath } from 'node:url';
 import {
   AgeBand,
   DrillCategory,
@@ -8,36 +6,13 @@ import {
   Intensity,
 } from '../src/generated/prisma/enums.js';
 import type { Prisma } from '../src/generated/prisma/client.js';
-
-type RawRubricItem = { criterion: string; description: string };
-
-interface RawDrill {
-  id: string;
-  name: string;
-  category: string;
-  subcategory: string;
-  format: string;
-  age_bands: string[];
-  positions: string[];
-  duration_min: number;
-  intensity: string;
-  equipment: string[];
-  description: string;
-  coaching_points: string[];
-  rubric: RawRubricItem[];
-  progression?: string;
-  video_note?: string;
-  safety_note?: string;
-}
+import { DRILL_ID } from '../src/drills/drill-codes.js';
+import { readLibrary, type LibraryDrill } from './library.js';
 
 export interface DrillRecord {
   id: string;
   data: Omit<Prisma.DrillUncheckedCreateInput, 'id'>;
 }
-
-const DEFAULT_PATH = fileURLToPath(
-  new URL('./data/football_drill_library.json', import.meta.url),
-);
 
 export function toEnum<T extends Record<string, string>>(
   enumObject: T,
@@ -51,10 +26,10 @@ export function toEnum<T extends Record<string, string>>(
   return found as T[keyof T];
 }
 
-function mapDrill(raw: RawDrill): DrillRecord {
+function mapDrill(raw: LibraryDrill): DrillRecord {
   const where = `drill ${raw.id}`;
 
-  if (!/^[a-z]{2}-\d{3}$/.test(raw.id)) {
+  if (!DRILL_ID.test(raw.id)) {
     throw new Error(`Bad id format: "${raw.id}"`);
   }
   if (raw.age_bands.length === 0) throw new Error(`${where}: no age bands`);
@@ -93,9 +68,8 @@ function mapDrill(raw: RawDrill): DrillRecord {
   };
 }
 
-export function loadDrills(path: string = DEFAULT_PATH): DrillRecord[] {
-  const file = JSON.parse(readFileSync(path, 'utf8')) as { drills: RawDrill[] };
-  const drills = file.drills.map(mapDrill);
+export function loadDrills(path?: string): DrillRecord[] {
+  const drills = readLibrary(path).drills.map(mapDrill);
 
   const ids = drills.map((d) => d.id);
   if (new Set(ids).size !== ids.length) {
